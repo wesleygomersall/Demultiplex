@@ -45,34 +45,77 @@ $ zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R1_001.fastq.gz | wc -
 1452986940
 $ zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | wc -l
 1452986940
+$ cat indexes.txt 
+sample  group   treatment       index   index sequence
+1       2A      control B1      GTAGCGTA
+2       2B      control A5      CGATCGAT
+3       2B      control C1      GATCAAGG
+4       2C      mbnl    B9      AACAGCGA
+6       2D      mbnl    C9      TAGCCATG
+7       2E      fox     C3      CGGTAATC
+8       2F      fox     B3      CTCTGGAT
+10      2G      both    C4      TACCGGAT
+11      2H      both    A11     CTAGCTCA
+14      3B      control C7      CACTTCAC
+15      3C      mbnl    B2      GCTACTCT
+16      3D      mbnl    A1      ACGATCAG
+17      3E      fox     B7      TATGGCAC
+19      3F      fox     A3      TGTTCCGT
+21      3G      both    B4      GTCCTAAG
+22      3H      both    A12     TCGACAAG
+23      4A      control C10     TCTTCGAC
+24      4A      control A2      ATCATGCG
+27      4C      mbnl    C2      ATCGTGGT
+28      4D      mbnl    A10     TCGAGAGT
+29      4E      fox     B8      TCGGATTC
+31      4F      fox     A7      GATCTTGC
+32      4G      both    B10     AGAGTCCA
+34      4H      both    A8      AGGATAGC
 ```
 
+| File name                     | label         | Read length   | Phred encoding    |
+| ---                           | ---           | ---           | ---               |
+| 1294_S1_L008_R1_001.fastq.gz  | Forward read  | 101bp         | Phred+33          |
+| 1294_S1_L008_R2_001.fastq.gz  | Forward index | 8bp           | Phred+33          |
+| 1294_S1_L008_R3_001.fastq.gz  | Reverse index | 8bp           | Phred+33          |
+| 1294_S1_L008_R4_001.fastq.gz  | Reverse read  | 101bp         | Phred+33          |
 
-`R2` file is FORWARD? 
-`R3` file is REVERSE? 
+- Encoding is Phred+33, evidence is that there are `-` and `<` characters. 
+- There are 1452986940 lines, there are 363246735 records in each file.
+- Records in each file have nearly identical headers, the only difference is the read number corresponding to the file.
 
-| File name | label | Read length | Phred encoding |
-|---|---|---|---|
-| 1294_S1_L008_R1_001.fastq.gz | Forward read?  | 101bp | Phred+33 |
-| 1294_S1_L008_R2_001.fastq.gz | Forward index? | 8bp | Phred+33 |
-| 1294_S1_L008_R3_001.fastq.gz | Reverse index? | 8bp | Phred+33 |
-| 1294_S1_L008_R4_001.fastq.gz | Reverse read?  | 101bp | Phred+33 |
 
-Encoding is Phred+33, evidence is that there are `-` and `<` characters. 
-There are 1452986940 lines, there are 363246735 records in each file.
-Records in each file have nearly identical headers, the only difference is the read number corresponding to the file.
+Made psuedo code [psuedo_wkg.txt](./psuedo_wkg.txt) for demultiplexing algorithm which, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplexes reads by index-pair, outputting:
 
+- One R1 FASTQ file and one R2 FASTQ file per matching index-pair
+- Two FASTQ files for non-matching index-pairs (index-hopping): R1 and R2
+- Two additional FASTQ files when one or both index reads are unknown or low quality (do not match the 24 known indexes [this includes indexes with 'N's in them] or do not meet a quality score cutoff)
+- Add the sequence of the index-pair to the header of BOTH reads in all of your FASTQ files for all categories (e.g. add “AAAAAAAA-CCCCCCCC” to the end of headers of every read pair that had an index1 of AAAAAAAA and an index2 of CCCCCCCC; this pair of reads would be in the unknown category as one or both of these indexes do not match the 24 known indexes).
+
+
+
+Additionally, your algorithm should report:
+- The number of read-pairs with properly matched indexes (per index-pair)
+- The number of read pairs with index-hopping observed
+- The number of read-pairs with unknown index(es)
+- You should strive to report values for each possible pair of indexes (both swapped and dual matched). 
+
+While developing psuedocode, determine high level functions: 
+- Function headers (name and parameters)
+- Description/doc string – What does this function do?
+- Test examples for individual functions
+- Return statement
 
 
 ## todo
 
-Part 1 – Quality Score Distribution per-nucleotide
 
-Generate a per base distribution of quality scores for read1, read2, index1, and index2.
-Average the quality scores at each position for all reads and generate a per nucleotide mean distribution as you did in part 1 of PS4 in Bi621. 
-(NOTE! Do NOT use the 2D array strategy from PS9 - you WILL run out of memory!)
 
-In file `./Assignment-the-first/Answers.md`
-- Turn in the 4 histograms.
-- What is a good quality score cutoff for index reads and biological read pairs to utilize for sample identification and downstream analysis, respectively? Justify your answer.
-- How many indexes have undetermined (N) base calls? (Utilize your command line tool knowledge. Submit the command(s) you used. CHALLENGE: use a one-line command)
+
+
+### (Assignment 1: Part 1) – Quality Score Distribution per-nucleotide
+Create a python script [mean_qual_fq.py](./mean_qual_fq.py) to generate per base mean of quality scores for each file: read1, read2, index1, and index2. This is the same thing I did in part 1 of PS4 in Bi621 (no variance necessary in this plot). I cannot use a 2-dimensional array in numpy to calculate this because there wont be enough memory!  
+Link all 4 plots generated into markdown file `./Assignment-the-first/Answers.md`. 
+
+
+Create unit tests: 4 fastq files input (at least 1 entry of each: dual matched, index-hopped, unknown index), at least 6 fastq files output (R1.fq and R2.fq for each type of entry). Differently-barcoded reads should end up in different fastq files. 
