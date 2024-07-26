@@ -92,8 +92,6 @@ Made psuedo code [psuedo_wkg.txt](./psuedo_wkg.txt) for demultiplexing algorithm
 - Two additional FASTQ files when one or both index reads are unknown or low quality (do not match the 24 known indexes [this includes indexes with 'N's in them] or do not meet a quality score cutoff)
 - Add the sequence of the index-pair to the header of BOTH reads in all of your FASTQ files for all categories (e.g. add “AAAAAAAA-CCCCCCCC” to the end of headers of every read pair that had an index1 of AAAAAAAA and an index2 of CCCCCCCC; this pair of reads would be in the unknown category as one or both of these indexes do not match the 24 known indexes).
 
-
-
 Additionally, your algorithm should report:
 - The number of read-pairs with properly matched indexes (per index-pair)
 - The number of read pairs with index-hopping observed
@@ -106,12 +104,7 @@ While developing psuedocode, determine high level functions:
 - Test examples for individual functions
 - Return statement
 
-
 ## todo
-
-
-
-
 
 ### (Assignment 1: Part 1) – Quality Score Distribution per-nucleotide
 Create a python script [mean_qual_fq.py](./mean_qual_fq.py) to generate per base mean of quality scores for each file: read1, read2, index1, and index2. This is the same thing I did in part 1 of PS4 in Bi621 (no variance necessary in this plot). I cannot use a 2-dimensional array in numpy to calculate this because there wont be enough memory!  
