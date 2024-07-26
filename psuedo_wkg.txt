@@ -1,1 +1,94 @@
-Psuedo code here :-)
+# TODO 
+######## See line 59 ####WRITE FUNCTIONS 
+#### Comment and make more clear
+
+#!/usr/bin/env python
+
+import 
+
+argparse input: 
+    R1_FILE
+    R2_FILE
+    R3_FILE
+    R4_FILE
+    INDEXES (this will have a header line)
+
+function to make: 
+    rev_complement
+    check_n_bases
+
+#Read through INDEXES, create a list of the 24 seqs named all_indexes
+all_indexes = []
+with open(INDEXES, 'r') as fin:
+    for line in fin: 
+        skip the first line of headers
+        sixth? column is the string I wanna grab
+        append this to all_indexes
+
+my_silly_little_dictionary = dict()
+my_serious_large_dictionary = dict()
+matched_list = []
+
+for ind1 in all_indexes:
+    for ind2 in all_indexes: 
+        cooltuple = (ind1, bioinfo.rev_complement(ind2))
+        make cooltuple a key of my_silly_little_dictionary, default value = 0
+        wonderful_string = ind1 + '-' + ind2 
+        make cooltuple a key of my_serious_large_dictionary, default value = wonderful_string
+        if ind1 == ind2 #match indexes
+            matched_list.append(cooltuple)
+
+#this way I do not need to reverse complement every single seq in R3_FILE!
+
+#increment values of silly_little_dictionary whenever a read is identified to have indexes matching a tuple in keys
+#serious_large_dictionary is for adding strings to the FASTQ headers and output file naming
+#matched_list to check if a pair of indexes is a match (Rev.Comp. this for checking against R3)
+
+hop_count = 0
+unk_count = 0 
+
+loop through all 4:     R1_FILE R2_FILE R3_FILE R4_FILE
+    read 4 lines @ a time from each file (store 12 lines, 4 each from R1 and R4, and index lines + their quality scores)
+    (I dont think I need the '+' lines actually)
+    
+    append the values from my_serious_large_dictionary keys to the headers
+    
+    if 1: unknown
+    (categorize poor quality index as unknown, also N in strings are unknown)
+
+    ########### work in progress
+    #   how do I screen quality? Global variable for quality? 
+    #   check for n bases. (write function)
+    
+    unk_count += 1
+        #write to files unknown_R1.fq, unknown_R2.fq
+        fileoutname: str = 'unknown'
+
+    if 2: match pair in my_silly_little_dictionary (either match pair or hopped)
+    Increment value for key
+
+        if indexes in matchedlist # match pair
+            get name of file a.k.a. the string I stored in this value
+            fileoutname: str = ?
+        if not in matched_list, then it is a hopped index
+            fileoutname: str = 'hopped'
+            hop_count += 1
+
+
+    else: 
+        nothing should land here, return error
+        fileoutname = 'error'
+
+    write R1 to <filoutname>_R1.fq and write R4 <filoutname>_R2.fq
+
+
+# print some stuff to standard output 
+print out the dictionary..
+    first loop through list of dual match tuples. I only care about the values for those keys
+    Those values are the reads which were dual matched with those ones. 
+print out hop_count, unk_count
+
+print out the possible matches. loop though list of all index matches: 
+for ind1 in all_indexes:
+    for ind2 in all_indexes: 
+        print(value method for dictionary with key (ind1, ind2)
