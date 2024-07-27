@@ -86,7 +86,7 @@ loop through all 4:     R1_FILE R2_FILE R3_FILE R4_FILE
     Increment value for key
 
         if indexes in matchedlist # match pair
-            get name of file a.k.a. the string I stored in this value
+            get name of file a.k.a. the string I stored in this value: dictionary: my_serious_large_dictionary
             fileoutname: str = ?
         if not in matched_list, then it is a hopped index
             fileoutname: str = 'hopped'
