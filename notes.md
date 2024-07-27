@@ -85,7 +85,7 @@ sample  group   treatment       index   index sequence
 - Records in each file have nearly identical headers, the only difference is the read number corresponding to the file.
 
 
-Made psuedo code [psuedo_wkg.txt](./psuedo_wkg.txt) for demultiplexing algorithm which, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplexes reads by index-pair, outputting:
+Made pseudo code [pseudo_wkg.txt](./pseudo_wkg.txt) for demultiplexing algorithm which, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplexes reads by index-pair, outputting:
 
 - One R1 FASTQ file and one R2 FASTQ file per matching index-pair
 - Two FASTQ files for non-matching index-pairs (index-hopping): R1 and R2
