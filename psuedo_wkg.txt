@@ -44,12 +44,12 @@ for ind1 in all_indexes:
     for ind2 in all_indexes: 
         cooltuple = (ind1, bioinfo.rev_complement(ind2))
         make cooltuple a key of my_silly_little_dictionary, default value = 0
-        wonderful_string = ind1 + '-' + ind2 
+        wonderful_string = ind1 + '-' + ind2 #this needs to be the index name, not the index sequence..  
         make cooltuple a key of my_serious_large_dictionary, default value = wonderful_string
         if ind1 == ind2 #match indexes
             matched_list.append(cooltuple)
 
-#for my_serious_large_dictionary rather than wonderful string, I may use the A1:A1, B3:B3, etc. index name instead of sequence.
+#for my_serious_large_dictionary rather than wonderful string, I will use the A1:A1, B3:B3, etc. index name instead of sequence
 
 #this way I do not need to reverse complement every single seq in R3_FILE!
 
