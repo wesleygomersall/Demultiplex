@@ -54,12 +54,10 @@ loop through all 4:     R1_FILE R2_FILE R3_FILE R4_FILE
     append the values from my_serious_large_dictionary keys to the headers
     
     if 1: unknown
-    (categorize poor quality index as unknown, also N in strings are unknown)
-
-    ########### work in progress
-    #   how do I screen quality? Global variable for quality? 
-    #   check for n bases. (write function)
-    
+	(Check if there are any 'N' bases in the sequence. Index is unknown if there is an 'N'	
+	Calculate average quality of the sequence if below cutoff determined with plots from part 1
+	Read is unknown) 
+ 
     unk_count += 1
         #write to files unknown_R1.fq, unknown_R2.fq
         fileoutname: str = 'unknown'
