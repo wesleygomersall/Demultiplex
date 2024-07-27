@@ -29,12 +29,20 @@ functions to make:
 	return meanq
 
 #Read through INDEXES, create a list of the 24 seqs named all_indexes
-all_indexes = []
+all_indexes = [] 
+index_seq = dict()
 with open(INDEXES, 'r') as fin:
     for line in fin: 
         skip the first line of headers
         sixth? column is the string I wanna grab
         append this to all_indexes
+        create dicitonary: key is sixth col: index sequence, value is fifth col: index
+        # use this to go between sequences below to index names (they look nicer and are easier to refer to)
+        # this was an afterthought so don't hate me if this is a janky method, 
+        # originally I was only gonna use the index sequences for appending to headers
+        # and for file names. 
+
+
 
 my_silly_little_dictionary = dict()
 my_serious_large_dictionary = dict()
@@ -44,7 +52,7 @@ for ind1 in all_indexes:
     for ind2 in all_indexes: 
         cooltuple = (ind1, bioinfo.rev_complement(ind2))
         make cooltuple a key of my_silly_little_dictionary, default value = 0
-        wonderful_string = ind1 + '-' + ind2 #this needs to be the index name, not the index sequence..  
+        wonderful_string = index_seq value for (ind1) + ":" + index_seq value for (ind2)
         make cooltuple a key of my_serious_large_dictionary, default value = wonderful_string
         if ind1 == ind2 #match indexes
             matched_list.append(cooltuple)
