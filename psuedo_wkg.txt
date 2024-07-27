@@ -49,6 +49,8 @@ for ind1 in all_indexes:
         if ind1 == ind2 #match indexes
             matched_list.append(cooltuple)
 
+#for my_serious_large_dictionary rather than wonderful string, I may use the A1:A1, B3:B3, etc. index name instead of sequence.
+
 #this way I do not need to reverse complement every single seq in R3_FILE!
 
 #increment values of silly_little_dictionary whenever a read is identified to have indexes matching a tuple in keys
