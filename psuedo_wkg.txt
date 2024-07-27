@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 
 import 
@@ -10,9 +9,24 @@ argparse input:
     R4_FILE
     INDEXES (this will have a header line)
 
-function to make: 
-    rev_complement
-    check_n_bases
+functions to make: 
+   def rev_complement(seq: str)-> revcomp: str:
+	"""Returns the reverse complement of a DNA sequence"""
+	input: "ACTGTGACA"
+	expected output: "TGTCACAGT"
+	return revcomp  
+   def check_n_bases(seq: str) -> nbases: bool: 
+	"""checks if there is an 'N' in a DNA sequence""""
+	input: "ACTGTGACA"
+	expected output: False
+	input 2: "ACTGTCANA"
+	expected output 2: True
+	return nbases
+   def mean_qual(quals: str) -> meanq: float: 
+	"""calculates mean quality of a quality score string""" 
+	input: "FFHH"
+	expected output: 38.0 
+	return meanq
 
 #Read through INDEXES, create a list of the 24 seqs named all_indexes
 all_indexes = []
@@ -49,11 +63,10 @@ loop through all 4:     R1_FILE R2_FILE R3_FILE R4_FILE
     (I dont think I need the '+' lines actually)
     
     append the values from my_serious_large_dictionary keys to the headers
-    
-    if 1: unknown
-	(Check if there are any 'N' bases in the sequence. Index is unknown if there is an 'N'	
-	Calculate average quality of the sequence if below cutoff determined with plots from part 1
-	Read is unknown) 
+   
+    Loop through the quality sequence, get the mean (?) quality of each index. Also check for 'N' bases. 
+ 
+    if 1: either index has low mean quality and or 'N base -> unknown indexes
  
     unk_count += 1
         #write to files unknown_R1.fq, unknown_R2.fq
@@ -69,13 +82,11 @@ loop through all 4:     R1_FILE R2_FILE R3_FILE R4_FILE
             fileoutname: str = 'hopped'
             hop_count += 1
 
-
     else: 
         nothing should land here, return error
         fileoutname = 'error'
 
     write R1 to <filoutname>_R1.fq and write R4 <filoutname>_R2.fq
-
 
 # print some stuff to standard output 
 print out the dictionary..
