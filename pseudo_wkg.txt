@@ -55,14 +55,15 @@ for ind1 in all_indexes:
         make cooltuple a key of my_silly_little_dictionary, default value = 0
         wonderful_string = index_seq value for (ind1) + ":" + index_seq value for (ind2) # these are sequences
         make cooltuple a key of my_serious_large_dictionary, default value = wonderful_string
-        third_dict: index sequence as key and "index" as value (for naming files: B1, A5, etc.)
         if ind1 == ind2 #match indexes
+            third_dict: cooltuple as key and "index" as value (for naming files: B1, A5, etc.)
             matched_list.append(cooltuple)
 
 #this way I do not need to reverse complement every single seq in R3_FILE!
 
 #increment values of silly_little_dictionary whenever a read is identified to have indexes matching a tuple in keys
 #serious_large_dictionary is for adding strings to the FASTQ headers and output file naming
+
 #matched_list to check if a pair of indexes is a match (Rev.Comp. this for checking against R3)
 
 hop_count = 0
