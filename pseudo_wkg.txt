@@ -46,18 +46,18 @@ with open(INDEXES, 'r') as fin:
 
 my_silly_little_dictionary = dict()
 my_serious_large_dictionary = dict()
+third_dict = dict() 
 matched_list = []
 
 for ind1 in all_indexes:
     for ind2 in all_indexes: 
         cooltuple = (ind1, bioinfo.rev_complement(ind2))
         make cooltuple a key of my_silly_little_dictionary, default value = 0
-        wonderful_string = index_seq value for (ind1) + ":" + index_seq value for (ind2)
+        wonderful_string = index_seq value for (ind1) + ":" + index_seq value for (ind2) # these are sequences
         make cooltuple a key of my_serious_large_dictionary, default value = wonderful_string
+        third_dict: index sequence as key and "index" as value (for naming files: B1, A5, etc.)
         if ind1 == ind2 #match indexes
             matched_list.append(cooltuple)
-
-#for my_serious_large_dictionary rather than wonderful string, I will use the A1:A1, B3:B3, etc. index name instead of sequence
 
 #this way I do not need to reverse complement every single seq in R3_FILE!
 
@@ -72,7 +72,6 @@ loop through all 4:     R1_FILE R2_FILE R3_FILE R4_FILE
     read 4 lines @ a time from each file (store 12 lines, 4 each from R1 and R4, and index lines + their quality scores)
     (I dont think I need the '+' lines actually)
     
-    append the values from my_serious_large_dictionary keys to the headers
    
     Loop through the quality sequence, get the mean (?) quality of each index. Also check for 'N' bases. 
  
@@ -95,6 +94,15 @@ loop through all 4:     R1_FILE R2_FILE R3_FILE R4_FILE
     else: 
         nothing should land here, return error
         fileoutname = 'error'
+
+    I should have a bool at this point to know if the read is dual-indexed or not. 
+    append the values from my_serious_large_dictionary keys to the headers
+    ###IMPORTANT the second index must be reverse complement of what is in R3 file. 
+        It should be very easy to append indexes if dual indexed. 
+        I do not have to call reverse ecomplement function when I already know that the read is dual-indexed.
+        Just write the forward index twice.  
+        HOWEVER If not dual indexed (1-2% of reads) then I will need to handle this.
+        In this case, calling the rev complement function is unavoidable. 
 
     write R1 to <filoutname>_R1.fq and write R4 <filoutname>_R2.fq
 
