@@ -98,13 +98,13 @@ Additionally, your algorithm should report:
 - The number of read-pairs with unknown index(es)
 - You should strive to report values for each possible pair of indexes (both swapped and dual matched). 
 
-While developing psuedocode, determine high level functions: 
+While developing pseudocode, determine high level functions: 
 - Function headers (name and parameters)
 - Description/doc string – What does this function do?
 - Test examples for individual functions
 - Return statement
 
-## todo
+## 2024-07-29
 
 ### (Assignment 1: Part 1) – Quality Score Distribution per-nucleotide
 Create a python script [mean_qual_fq.py](./mean_qual_fq.py) to generate per base mean of quality scores for each file: read1, read2, index1, and index2. This is the same thing I did in part 1 of PS4 in Bi621 (no variance necessary in this plot). I cannot use a 2-dimensional array in numpy to calculate this because there wont be enough memory!  
