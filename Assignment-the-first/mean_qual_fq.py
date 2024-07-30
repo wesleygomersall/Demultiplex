@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import bioinfo
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # type: ignore (thanks vs code)
 import gzip
 
 def init_list(lst: list, n: int, value: float=0.0) -> list:
