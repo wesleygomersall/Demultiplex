@@ -2,6 +2,7 @@
 
 import bioinfo
 import matplotlib.pyplot as plt
+import gzip
 
 def init_list(lst: list, n: int, value: float=0.0) -> list:
     '''This function takes an empty list and populates it with
@@ -19,7 +20,7 @@ def populate_list(file: str, n:int) -> tuple[list, int]:
     """
     list = []
     list = init_list(list, n)
-    with open(file) as fqall:
+    with gzip.open(file, 'rt') as fqall:
         for index, line in enumerate(fqall):
             if (index+1) % 4 == 0:
                 # print(line.strip('\n'))
