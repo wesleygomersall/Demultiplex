@@ -27,7 +27,7 @@ def convert_phred(letter: str, phred33: bool = True) -> int:
         return ord(letter) - 64
 
 def qual_score(phred_score: str, phred33: bool = True) -> float:
-    """Converts a string of characters into phred scores. 
+    """Converts a string of Phred scores into integer scores. 
     Returns the average score for the entire string.
     Pass a bool to distinguish between Phred+33 and Phred+64""" 
     total: int = 0
@@ -63,10 +63,6 @@ def calc_median(lst: list[int | float]) -> float:
         median = lst[len(lst)//2]
     return median
 
-#def oneline_fasta():
-#    '''docstring'''
-#    pass
-
 def oneline_fasta(fileinput: str, fileoutput: str):
     """Takes string pointing to input fasta file and string naming desired output file.
     Removes newline characters from within the fasta sequences themselves. 
@@ -87,6 +83,47 @@ def oneline_fasta(fileinput: str, fileoutput: str):
                 fout.write(string)
             line += 1
 
+# def reverse_complement(sequence: str, RNAflag: bool = False) -> str:
+#     '''Returns the reverse complement of a DNA or an RNA string (default DNA).
+#     Input and output are both 5' -> 3'.
+#     '''
+#     assert validate_base_seq(sequence, RNAflag)
+#     DNA_comp = {'A':'T', 'a':'t',
+#                 'T':'A', 't':'a',
+#                 'C':'G', 'c':'g',
+#                 'G':'C', 'g':'c',
+#                 'N':'N', 'n':'n'}
+#     RNA_comp = {'A':'U', 'a':'u',
+#                 'U':'A', 'u':'a',
+#                 'C':'G', 'c':'g',
+#                 'G':'C', 'g':'c',
+#                 'N':'N', 'n':'n'}
+#     reversecomp: str = ""
+#     if RNAflag == False:
+#         for index in range(len(sequence)):
+#             reversecomp = reversecomp + DNA_comp[sequence[-1*(index + 1)]]
+#     elif RNAflag:
+#         for index in range(len(sequence)):
+#             reversecomp = reversecomp + RNA_comp[sequence[-1*(index + 1)]]
+#     return reversecomp
+
+# def reverse(sequence: str) -> str:
+#     '''Returns the reverse of a string.
+#     '''
+#     reverse: str = ""
+#     for index in range(len(sequence)):
+#         reverse = reverse + sequence[-1*(index + 1)]
+#     return reverse
+
+# def check_n(seq: str) -> bool: 
+#     '''Bool check if a string contains 'n' or 'N'.
+#     '''
+#     bases = set(seq.upper())
+#     if {'N'}.issubset(bases): 
+#         return True
+#     else:
+#         return False
+    
 if __name__ == "__main__":
     # write tests for functions above, Leslie has already populated some tests for convert_phred
     # These tests are run when you execute this file directly (instead of importing it)
@@ -96,7 +133,6 @@ if __name__ == "__main__":
     assert convert_phred("@") == 31, "wrong phred score for '@'"
     assert convert_phred("$") == 3, "wrong phred score for '$'"
     print("Your convert_phred function is working! Nice job")
-
 
     assert validate_base_seq("AUCGGCuagcnN", True) == True, "validate_base_seq fails for sequence 'AUCGGCuagcnN'"
     assert validate_base_seq("ACTGTGCNTGcaGgtntG") == True, "validate_base_seq fails for sequence 'ACTGTGCNTGcaGgtntG'"
@@ -116,3 +152,19 @@ if __name__ == "__main__":
     assert calc_median([7]) == 7
     assert calc_median([12, 15.5, 48, 55, 100, 111]) == 51.5
     print("Correctly calculated median of list.")
+
+    # assert reverse("ATCG") == "GCTA"
+    # assert reverse("ATCGAAA") == "AAAGCTA"
+    # assert reverse("ATCGCGTGCTCTCTCTTCTCT") == "TCTCTTCTCTCTCGTGCGCTA"
+    # assert reverse_complement("ATCG") == "CGAT"
+    # assert reverse_complement("ATCGAAA") == "TTTCGAT"
+    # assert reverse_complement("AUCGAAA", True) == "UUUCGAU" #RNA
+    # assert reverse_complement("ATCGCGTGCTCTCTCTTCTCT") == "AGAGAAGAGAGAGCACGCGAT"
+    # print(f"5'-{reverse_complement('AAAAGTCGTCGATTTGCTCGGGGGCTTTC')}-3'")
+    # print(f"3'-{reverse('AAAAGTCGTCGATTTGCTCGGGGGCTTTC')}-5'")
+    # print("Successfully reversed and reverse complemented nucleic acid sequences.")
+
+    # assert check_n("ACTCGCT") == False
+    # assert check_n("ACTCGNT") == True
+    # assert check_n("ACNCGCT") == True
+    # print("Successfully checked for 'N' bases.")

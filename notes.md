@@ -125,4 +125,6 @@ Created python functions `check_n` and `reverse_complement` to import into my sc
 
 ## 2024-07-30
 
-Create python function `mean_quality` to get mean quality of a string of phred scores.
+Leslie says we should not be using these functions in bioinfo.py. Oops. I will just copy and paste them into my new script and comment them out of bioinfo.py for now.  
+
+Begin scripting for Assignment-the-third. [demultiplex.py](./Assignment-the-third/demultiplex.py)
