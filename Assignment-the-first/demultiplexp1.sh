@@ -7,7 +7,7 @@
 #SBATCH --mail-user=wesg@uoregon.edu
 #SBATCH --mail-type=END
 
-conda activate bgmp_py312
+conda activate bgmp_py.mplib
 conda list
 
 /usr/bin/time -v ./mean_qual_fq.py 
