@@ -110,7 +110,7 @@ While developing pseudocode, determine high level functions:
 Create a python script [mean_qual_fq.py](./Assignment-the-first/mean_qual_fq.py) to generate per base mean of quality scores for each file: read1, read2, index1, and index2. This is the same thing I did in part 1 of PS4 in Bi621 (no variance necessary in this plot). I cannot use a 2-dimensional array in numpy to calculate this because there wont be enough memory!  
 Link all 4 plots generated into markdown file `./Assignment-the-first/Answers.md`. 
 
-I made a slurm script [demultiplexp1.sh](./Assignment-the-first/demultiplexp1.sh) to run this job. [Output](./Assignment-the-first/slurm-XXXX.out)
+I made a slurm script [demultiplexp1.sh](./Assignment-the-first/demultiplexp1.sh) to run this job. [Output](./Assignment-the-first/slurm-7776055.out)
 
 Create conda environment with matplotlib: 
 ```
@@ -120,3 +120,9 @@ conda install matplotlib
 ```
 
 Create unit tests: 4 fastq files input (at least 1 entry of each: dual matched, index-hopped, unknown index), at least 6 fastq files output (R1.fq and R2.fq for each type of entry). Differently-barcoded reads should end up in different fastq files. 
+
+Created python functions `check_n` and `reverse_complement` to import into my script. I added it to [bioinfo.py](./Assignment-the-first/bioinfo.py).  
+
+## 2024-07-30
+
+Create python function `mean_quality` to get mean quality of a string of phred scores.
