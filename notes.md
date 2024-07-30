@@ -85,7 +85,7 @@ sample  group   treatment       index   index sequence
 - Records in each file have nearly identical headers, the only difference is the read number corresponding to the file.
 
 
-Made pseudo code [pseudo_wkg.txt](./pseudo_wkg.txt) for demultiplexing algorithm which, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplexes reads by index-pair, outputting:
+Made pseudo code [pseudo_wkg.txt](./Assignment-the-first/pseudo_wkg.txt) for demultiplexing algorithm which, given four input FASTQ files (2 with biological reads, 2 with index reads) and the 24 known indexes above, demultiplexes reads by index-pair, outputting:
 
 - One R1 FASTQ file and one R2 FASTQ file per matching index-pair
 - Two FASTQ files for non-matching index-pairs (index-hopping): R1 and R2
@@ -107,8 +107,9 @@ While developing pseudocode, determine high level functions:
 ## 2024-07-29
 
 ### (Assignment 1: Part 1) – Quality Score Distribution per-nucleotide
-Create a python script [mean_qual_fq.py](./mean_qual_fq.py) to generate per base mean of quality scores for each file: read1, read2, index1, and index2. This is the same thing I did in part 1 of PS4 in Bi621 (no variance necessary in this plot). I cannot use a 2-dimensional array in numpy to calculate this because there wont be enough memory!  
+Create a python script [mean_qual_fq.py](./Assignment-the-first/mean_qual_fq.py) to generate per base mean of quality scores for each file: read1, read2, index1, and index2. This is the same thing I did in part 1 of PS4 in Bi621 (no variance necessary in this plot). I cannot use a 2-dimensional array in numpy to calculate this because there wont be enough memory!  
 Link all 4 plots generated into markdown file `./Assignment-the-first/Answers.md`. 
 
+I made a slurm script [demultiplexp1.sh](./Assignment-the-first/demultiplexp1.sh) to run this job. [Output](./Assignment-the-first/slurm-XXXX.out)
 
 Create unit tests: 4 fastq files input (at least 1 entry of each: dual matched, index-hopped, unknown index), at least 6 fastq files output (R1.fq and R2.fq for each type of entry). Differently-barcoded reads should end up in different fastq files. 
