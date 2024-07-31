@@ -1,0 +1,690 @@
+
+EnvironmentNameNotFound: Could not find conda environment: bgmp.py312
+You can list all discoverable environments with `conda info --envs`.
+
+
+# packages in environment at /projects/bgmp/wesg/miniforge3:
+#
+# Name                    Version                   Build  Channel
+_libgcc_mutex             0.1                 conda_forge    conda-forge
+_openmp_mutex             4.5                       2_gnu    conda-forge
+archspec                  0.2.3              pyhd8ed1ab_0    conda-forge
+boltons                   24.0.0             pyhd8ed1ab_0    conda-forge
+brotli-python             1.1.0           py312h30efb56_1    conda-forge
+bzip2                     1.0.8                hd590300_5    conda-forge
+c-ares                    1.28.1               hd590300_0    conda-forge
+ca-certificates           2024.7.4             hbcca054_0    conda-forge
+certifi                   2024.7.4           pyhd8ed1ab_0    conda-forge
+cffi                      1.16.0          py312hf06ca03_0    conda-forge
+charset-normalizer        3.3.2              pyhd8ed1ab_0    conda-forge
+colorama                  0.4.6              pyhd8ed1ab_0    conda-forge
+conda                     24.5.0          py312h7900ff3_0    conda-forge
+conda-libmamba-solver     24.1.0             pyhd8ed1ab_0    conda-forge
+conda-package-handling    2.2.0              pyh38be061_0    conda-forge
+conda-package-streaming   0.9.0              pyhd8ed1ab_0    conda-forge
+distro                    1.9.0              pyhd8ed1ab_0    conda-forge
+fmt                       10.2.1               h00ab1b0_0    conda-forge
+frozendict                2.4.4           py312h9a8786e_0    conda-forge
+icu                       73.2                 h59595ed_0    conda-forge
+idna                      3.6                pyhd8ed1ab_0    conda-forge
+jsonpatch                 1.33               pyhd8ed1ab_0    conda-forge
+jsonpointer               3.0.0           py312h7900ff3_0    conda-forge
+keyutils                  1.6.1                h166bdaf_0    conda-forge
+krb5                      1.21.2               h659d440_0    conda-forge
+ld_impl_linux-64          2.40                 h41732ed_0    conda-forge
+libarchive                3.7.2                h2aa1ff5_1    conda-forge
+libcurl                   8.7.1                hca28451_0    conda-forge
+libedit                   3.1.20191231         he28a2e2_2    conda-forge
+libev                     4.33                 hd590300_2    conda-forge
+libexpat                  2.6.2                h59595ed_0    conda-forge
+libffi                    3.4.2                h7f98852_5    conda-forge
+libgcc-ng                 13.2.0               h807b86a_5    conda-forge
+libgomp                   13.2.0               h807b86a_5    conda-forge
+libiconv                  1.17                 hd590300_2    conda-forge
+libmamba                  1.5.8                had39da4_0    conda-forge
+libmambapy                1.5.8           py312hd9e9ff6_0    conda-forge
+libnghttp2                1.58.0               h47da74e_1    conda-forge
+libnsl                    2.0.1                hd590300_0    conda-forge
+libsolv                   0.7.28               hfc55251_2    conda-forge
+libsqlite                 3.45.2               h2797004_0    conda-forge
+libssh2                   1.11.0               h0841786_0    conda-forge
+libstdcxx-ng              13.2.0               h7e041cc_5    conda-forge
+libuuid                   2.38.1               h0b41bf4_0    conda-forge
+libxcrypt                 4.4.36               hd590300_1    conda-forge
+libxml2                   2.12.6               h232c23b_1    conda-forge
+libzlib                   1.2.13               hd590300_5    conda-forge
+lz4-c                     1.9.4                hcb278e6_0    conda-forge
+lzo                       2.10              h516909a_1000    conda-forge
+mamba                     1.5.8           py312h9460a1c_0    conda-forge
+menuinst                  2.1.1           py312h7900ff3_0    conda-forge
+ncurses                   6.4.20240210         h59595ed_0    conda-forge
+openssl                   3.3.1                h4ab18f5_1    conda-forge
+packaging                 24.0               pyhd8ed1ab_0    conda-forge
+pip                       24.0               pyhd8ed1ab_0    conda-forge
+platformdirs              4.2.0              pyhd8ed1ab_0    conda-forge
+pluggy                    1.4.0              pyhd8ed1ab_0    conda-forge
+pybind11-abi              4                    hd8ed1ab_3    conda-forge
+pycosat                   0.6.6           py312h98912ed_0    conda-forge
+pycparser                 2.22               pyhd8ed1ab_0    conda-forge
+pysocks                   1.7.1              pyha2e5f31_6    conda-forge
+python                    3.12.3          hab00c5b_0_cpython    conda-forge
+python_abi                3.12                    4_cp312    conda-forge
+readline                  8.2                  h8228510_1    conda-forge
+reproc                    14.2.4.post0         hd590300_1    conda-forge
+reproc-cpp                14.2.4.post0         h59595ed_1    conda-forge
+requests                  2.31.0             pyhd8ed1ab_0    conda-forge
+ruamel.yaml               0.18.6          py312h98912ed_0    conda-forge
+ruamel.yaml.clib          0.2.8           py312h98912ed_0    conda-forge
+setuptools                69.5.1             pyhd8ed1ab_0    conda-forge
+tk                        8.6.13          noxft_h4845f30_101    conda-forge
+tqdm                      4.66.2             pyhd8ed1ab_0    conda-forge
+truststore                0.8.0              pyhd8ed1ab_0    conda-forge
+tzdata                    2024a                h0c530f3_0    conda-forge
+urllib3                   2.2.1              pyhd8ed1ab_0    conda-forge
+wheel                     0.43.0             pyhd8ed1ab_1    conda-forge
+xz                        5.2.6                h166bdaf_0    conda-forge
+yaml-cpp                  0.8.0                h59595ed_0    conda-forge
+zstandard                 0.22.0          py312h5b18bf6_1    conda-forge
+zstd                      1.5.6                ha6fb4c9_0    conda-forge
+Hopped read count: 352378
+Matched-index read count: 239750646
+Unknown-indexed read count: 123143711
+Index pair GTAGCGTA-GTAGCGTA count: 6033486
+Index pair GTAGCGTA-CGATCGAT count: 89
+Index pair GTAGCGTA-GATCAAGG count: 99
+Index pair GTAGCGTA-AACAGCGA count: 142
+Index pair GTAGCGTA-TAGCCATG count: 111
+Index pair GTAGCGTA-CGGTAATC count: 65
+Index pair GTAGCGTA-CTCTGGAT count: 373
+Index pair GTAGCGTA-TACCGGAT count: 791
+Index pair GTAGCGTA-CTAGCTCA count: 363
+Index pair GTAGCGTA-CACTTCAC count: 46
+Index pair GTAGCGTA-GCTACTCT count: 953
+Index pair GTAGCGTA-ACGATCAG count: 456
+Index pair GTAGCGTA-TATGGCAC count: 148
+Index pair GTAGCGTA-TGTTCCGT count: 227
+Index pair GTAGCGTA-GTCCTAAG count: 169
+Index pair GTAGCGTA-TCGACAAG count: 44
+Index pair GTAGCGTA-TCTTCGAC count: 481
+Index pair GTAGCGTA-ATCATGCG count: 140
+Index pair GTAGCGTA-ATCGTGGT count: 127
+Index pair GTAGCGTA-TCGAGAGT count: 391
+Index pair GTAGCGTA-TCGGATTC count: 65
+Index pair GTAGCGTA-GATCTTGC count: 66
+Index pair GTAGCGTA-AGAGTCCA count: 238
+Index pair GTAGCGTA-AGGATAGC count: 133
+Index pair CGATCGAT-GTAGCGTA count: 91
+Index pair CGATCGAT-CGATCGAT count: 4398491
+Index pair CGATCGAT-GATCAAGG count: 68
+Index pair CGATCGAT-AACAGCGA count: 67
+Index pair CGATCGAT-TAGCCATG count: 117
+Index pair CGATCGAT-CGGTAATC count: 98
+Index pair CGATCGAT-CTCTGGAT count: 567
+Index pair CGATCGAT-TACCGGAT count: 972
+Index pair CGATCGAT-CTAGCTCA count: 189
+Index pair CGATCGAT-CACTTCAC count: 56
+Index pair CGATCGAT-GCTACTCT count: 92
+Index pair CGATCGAT-ACGATCAG count: 131
+Index pair CGATCGAT-TATGGCAC count: 96
+Index pair CGATCGAT-TGTTCCGT count: 245
+Index pair CGATCGAT-GTCCTAAG count: 91
+Index pair CGATCGAT-TCGACAAG count: 55
+Index pair CGATCGAT-TCTTCGAC count: 537
+Index pair CGATCGAT-ATCATGCG count: 93
+Index pair CGATCGAT-ATCGTGGT count: 75
+Index pair CGATCGAT-TCGAGAGT count: 137
+Index pair CGATCGAT-TCGGATTC count: 63
+Index pair CGATCGAT-GATCTTGC count: 62
+Index pair CGATCGAT-AGAGTCCA count: 117
+Index pair CGATCGAT-AGGATAGC count: 166
+Index pair GATCAAGG-GTAGCGTA count: 109
+Index pair GATCAAGG-CGATCGAT count: 80
+Index pair GATCAAGG-GATCAAGG count: 4900440
+Index pair GATCAAGG-AACAGCGA count: 74
+Index pair GATCAAGG-TAGCCATG count: 135
+Index pair GATCAAGG-CGGTAATC count: 46
+Index pair GATCAAGG-CTCTGGAT count: 270
+Index pair GATCAAGG-TACCGGAT count: 567
+Index pair GATCAAGG-CTAGCTCA count: 117
+Index pair GATCAAGG-CACTTCAC count: 24
+Index pair GATCAAGG-GCTACTCT count: 76
+Index pair GATCAAGG-ACGATCAG count: 220
+Index pair GATCAAGG-TATGGCAC count: 95
+Index pair GATCAAGG-TGTTCCGT count: 138
+Index pair GATCAAGG-GTCCTAAG count: 158
+Index pair GATCAAGG-TCGACAAG count: 57
+Index pair GATCAAGG-TCTTCGAC count: 9552
+Index pair GATCAAGG-ATCATGCG count: 106
+Index pair GATCAAGG-ATCGTGGT count: 213
+Index pair GATCAAGG-TCGAGAGT count: 108
+Index pair GATCAAGG-TCGGATTC count: 37
+Index pair GATCAAGG-GATCTTGC count: 87
+Index pair GATCAAGG-AGAGTCCA count: 85
+Index pair GATCAAGG-AGGATAGC count: 95
+Index pair AACAGCGA-GTAGCGTA count: 204
+Index pair AACAGCGA-CGATCGAT count: 158
+Index pair AACAGCGA-GATCAAGG count: 147
+Index pair AACAGCGA-AACAGCGA count: 6606498
+Index pair AACAGCGA-TAGCCATG count: 146
+Index pair AACAGCGA-CGGTAATC count: 68
+Index pair AACAGCGA-CTCTGGAT count: 511
+Index pair AACAGCGA-TACCGGAT count: 1011
+Index pair AACAGCGA-CTAGCTCA count: 260
+Index pair AACAGCGA-CACTTCAC count: 62
+Index pair AACAGCGA-GCTACTCT count: 98
+Index pair AACAGCGA-ACGATCAG count: 231
+Index pair AACAGCGA-TATGGCAC count: 207
+Index pair AACAGCGA-TGTTCCGT count: 229
+Index pair AACAGCGA-GTCCTAAG count: 140
+Index pair AACAGCGA-TCGACAAG count: 61
+Index pair AACAGCGA-TCTTCGAC count: 998
+Index pair AACAGCGA-ATCATGCG count: 256
+Index pair AACAGCGA-ATCGTGGT count: 182
+Index pair AACAGCGA-TCGAGAGT count: 168
+Index pair AACAGCGA-TCGGATTC count: 201
+Index pair AACAGCGA-GATCTTGC count: 373
+Index pair AACAGCGA-AGAGTCCA count: 223
+Index pair AACAGCGA-AGGATAGC count: 229
+Index pair TAGCCATG-GTAGCGTA count: 120
+Index pair TAGCCATG-CGATCGAT count: 64
+Index pair TAGCCATG-GATCAAGG count: 152
+Index pair TAGCCATG-AACAGCGA count: 97
+Index pair TAGCCATG-TAGCCATG count: 7951357
+Index pair TAGCCATG-CGGTAATC count: 59
+Index pair TAGCCATG-CTCTGGAT count: 428
+Index pair TAGCCATG-TACCGGAT count: 1002
+Index pair TAGCCATG-CTAGCTCA count: 234
+Index pair TAGCCATG-CACTTCAC count: 115
+Index pair TAGCCATG-GCTACTCT count: 62
+Index pair TAGCCATG-ACGATCAG count: 177
+Index pair TAGCCATG-TATGGCAC count: 193
+Index pair TAGCCATG-TGTTCCGT count: 225
+Index pair TAGCCATG-GTCCTAAG count: 200
+Index pair TAGCCATG-TCGACAAG count: 98
+Index pair TAGCCATG-TCTTCGAC count: 507
+Index pair TAGCCATG-ATCATGCG count: 165
+Index pair TAGCCATG-ATCGTGGT count: 83
+Index pair TAGCCATG-TCGAGAGT count: 161
+Index pair TAGCCATG-TCGGATTC count: 76
+Index pair TAGCCATG-GATCTTGC count: 70
+Index pair TAGCCATG-AGAGTCCA count: 161
+Index pair TAGCCATG-AGGATAGC count: 134
+Index pair CGGTAATC-GTAGCGTA count: 59
+Index pair CGGTAATC-CGATCGAT count: 81
+Index pair CGGTAATC-GATCAAGG count: 61
+Index pair CGGTAATC-AACAGCGA count: 41
+Index pair CGGTAATC-TAGCCATG count: 146
+Index pair CGGTAATC-CGGTAATC count: 3097661
+Index pair CGGTAATC-CTCTGGAT count: 246
+Index pair CGGTAATC-TACCGGAT count: 3861
+Index pair CGGTAATC-CTAGCTCA count: 114
+Index pair CGGTAATC-CACTTCAC count: 70
+Index pair CGGTAATC-GCTACTCT count: 37
+Index pair CGGTAATC-ACGATCAG count: 50
+Index pair CGGTAATC-TATGGCAC count: 83
+Index pair CGGTAATC-TGTTCCGT count: 96
+Index pair CGGTAATC-GTCCTAAG count: 46
+Index pair CGGTAATC-TCGACAAG count: 26
+Index pair CGGTAATC-TCTTCGAC count: 435
+Index pair CGGTAATC-ATCATGCG count: 56
+Index pair CGGTAATC-ATCGTGGT count: 166
+Index pair CGGTAATC-TCGAGAGT count: 73
+Index pair CGGTAATC-TCGGATTC count: 64
+Index pair CGGTAATC-GATCTTGC count: 53
+Index pair CGGTAATC-AGAGTCCA count: 48
+Index pair CGGTAATC-AGGATAGC count: 103
+Index pair CTCTGGAT-GTAGCGTA count: 529
+Index pair CTCTGGAT-CGATCGAT count: 913
+Index pair CTCTGGAT-GATCAAGG count: 350
+Index pair CTCTGGAT-AACAGCGA count: 453
+Index pair CTCTGGAT-TAGCCATG count: 563
+Index pair CTCTGGAT-CGGTAATC count: 410
+Index pair CTCTGGAT-CTCTGGAT count: 25933763
+Index pair CTCTGGAT-TACCGGAT count: 5821
+Index pair CTCTGGAT-CTAGCTCA count: 1381
+Index pair CTCTGGAT-CACTTCAC count: 297
+Index pair CTCTGGAT-GCTACTCT count: 1471
+Index pair CTCTGGAT-ACGATCAG count: 566
+Index pair CTCTGGAT-TATGGCAC count: 760
+Index pair CTCTGGAT-TGTTCCGT count: 1116
+Index pair CTCTGGAT-GTCCTAAG count: 553
+Index pair CTCTGGAT-TCGACAAG count: 256
+Index pair CTCTGGAT-TCTTCGAC count: 2776
+Index pair CTCTGGAT-ATCATGCG count: 547
+Index pair CTCTGGAT-ATCGTGGT count: 445
+Index pair CTCTGGAT-TCGAGAGT count: 1134
+Index pair CTCTGGAT-TCGGATTC count: 391
+Index pair CTCTGGAT-GATCTTGC count: 285
+Index pair CTCTGGAT-AGAGTCCA count: 969
+Index pair CTCTGGAT-AGGATAGC count: 490
+Index pair TACCGGAT-GTAGCGTA count: 857
+Index pair TACCGGAT-CGATCGAT count: 920
+Index pair TACCGGAT-GATCAAGG count: 826
+Index pair TACCGGAT-AACAGCGA count: 878
+Index pair TACCGGAT-TAGCCATG count: 1826
+Index pair TACCGGAT-CGGTAATC count: 1622
+Index pair TACCGGAT-CTCTGGAT count: 5796
+Index pair TACCGGAT-TACCGGAT count: 51581889
+Index pair TACCGGAT-CTAGCTCA count: 1975
+Index pair TACCGGAT-CACTTCAC count: 590
+Index pair TACCGGAT-GCTACTCT count: 741
+Index pair TACCGGAT-ACGATCAG count: 1041
+Index pair TACCGGAT-TATGGCAC count: 1813
+Index pair TACCGGAT-TGTTCCGT count: 2339
+Index pair TACCGGAT-GTCCTAAG count: 992
+Index pair TACCGGAT-TCGACAAG count: 493
+Index pair TACCGGAT-TCTTCGAC count: 5626
+Index pair TACCGGAT-ATCATGCG count: 982
+Index pair TACCGGAT-ATCGTGGT count: 973
+Index pair TACCGGAT-TCGAGAGT count: 1632
+Index pair TACCGGAT-TCGGATTC count: 677
+Index pair TACCGGAT-GATCTTGC count: 519
+Index pair TACCGGAT-AGAGTCCA count: 1123
+Index pair TACCGGAT-AGGATAGC count: 1063
+Index pair CTAGCTCA-GTAGCGTA count: 608
+Index pair CTAGCTCA-CGATCGAT count: 230
+Index pair CTAGCTCA-GATCAAGG count: 210
+Index pair CTAGCTCA-AACAGCGA count: 254
+Index pair CTAGCTCA-TAGCCATG count: 356
+Index pair CTAGCTCA-CGGTAATC count: 163
+Index pair CTAGCTCA-CTCTGGAT count: 2004
+Index pair CTAGCTCA-TACCGGAT count: 1846
+Index pair CTAGCTCA-CTAGCTCA count: 13661286
+Index pair CTAGCTCA-CACTTCAC count: 117
+Index pair CTAGCTCA-GCTACTCT count: 1010
+Index pair CTAGCTCA-ACGATCAG count: 338
+Index pair CTAGCTCA-TATGGCAC count: 345
+Index pair CTAGCTCA-TGTTCCGT count: 401
+Index pair CTAGCTCA-GTCCTAAG count: 281
+Index pair CTAGCTCA-TCGACAAG count: 9926
+Index pair CTAGCTCA-TCTTCGAC count: 1014
+Index pair CTAGCTCA-ATCATGCG count: 1103
+Index pair CTAGCTCA-ATCGTGGT count: 232
+Index pair CTAGCTCA-TCGAGAGT count: 564
+Index pair CTAGCTCA-TCGGATTC count: 192
+Index pair CTAGCTCA-GATCTTGC count: 152
+Index pair CTAGCTCA-AGAGTCCA count: 481
+Index pair CTAGCTCA-AGGATAGC count: 244
+Index pair CACTTCAC-GTAGCGTA count: 57
+Index pair CACTTCAC-CGATCGAT count: 84
+Index pair CACTTCAC-GATCAAGG count: 48
+Index pair CACTTCAC-AACAGCGA count: 45
+Index pair CACTTCAC-TAGCCATG count: 2198
+Index pair CACTTCAC-CGGTAATC count: 109
+Index pair CACTTCAC-CTCTGGAT count: 300
+Index pair CACTTCAC-TACCGGAT count: 435
+Index pair CACTTCAC-CTAGCTCA count: 135
+Index pair CACTTCAC-CACTTCAC count: 2765861
+Index pair CACTTCAC-GCTACTCT count: 38
+Index pair CACTTCAC-ACGATCAG count: 182
+Index pair CACTTCAC-TATGGCAC count: 160
+Index pair CACTTCAC-TGTTCCGT count: 120
+Index pair CACTTCAC-GTCCTAAG count: 46
+Index pair CACTTCAC-TCGACAAG count: 27
+Index pair CACTTCAC-TCTTCGAC count: 410
+Index pair CACTTCAC-ATCATGCG count: 65
+Index pair CACTTCAC-ATCGTGGT count: 48
+Index pair CACTTCAC-TCGAGAGT count: 62
+Index pair CACTTCAC-TCGGATTC count: 75
+Index pair CACTTCAC-GATCTTGC count: 41
+Index pair CACTTCAC-AGAGTCCA count: 71
+Index pair CACTTCAC-AGGATAGC count: 99
+Index pair GCTACTCT-GTAGCGTA count: 377
+Index pair GCTACTCT-CGATCGAT count: 89
+Index pair GCTACTCT-GATCAAGG count: 84
+Index pair GCTACTCT-AACAGCGA count: 103
+Index pair GCTACTCT-TAGCCATG count: 107
+Index pair GCTACTCT-CGGTAATC count: 56
+Index pair GCTACTCT-CTCTGGAT count: 514
+Index pair GCTACTCT-TACCGGAT count: 712
+Index pair GCTACTCT-CTAGCTCA count: 283
+Index pair GCTACTCT-CACTTCAC count: 37
+Index pair GCTACTCT-GCTACTCT count: 4720342
+Index pair GCTACTCT-ACGATCAG count: 157
+Index pair GCTACTCT-TATGGCAC count: 125
+Index pair GCTACTCT-TGTTCCGT count: 256
+Index pair GCTACTCT-GTCCTAAG count: 117
+Index pair GCTACTCT-TCGACAAG count: 33
+Index pair GCTACTCT-TCTTCGAC count: 418
+Index pair GCTACTCT-ATCATGCG count: 113
+Index pair GCTACTCT-ATCGTGGT count: 85
+Index pair GCTACTCT-TCGAGAGT count: 194
+Index pair GCTACTCT-TCGGATTC count: 62
+Index pair GCTACTCT-GATCTTGC count: 81
+Index pair GCTACTCT-AGAGTCCA count: 212
+Index pair GCTACTCT-AGGATAGC count: 100
+Index pair ACGATCAG-GTAGCGTA count: 129
+Index pair ACGATCAG-CGATCGAT count: 196
+Index pair ACGATCAG-GATCAAGG count: 126
+Index pair ACGATCAG-AACAGCGA count: 116
+Index pair ACGATCAG-TAGCCATG count: 219
+Index pair ACGATCAG-CGGTAATC count: 96
+Index pair ACGATCAG-CTCTGGAT count: 415
+Index pair ACGATCAG-TACCGGAT count: 888
+Index pair ACGATCAG-CTAGCTCA count: 225
+Index pair ACGATCAG-CACTTCAC count: 77
+Index pair ACGATCAG-GCTACTCT count: 136
+Index pair ACGATCAG-ACGATCAG count: 6234505
+Index pair ACGATCAG-TATGGCAC count: 176
+Index pair ACGATCAG-TGTTCCGT count: 233
+Index pair ACGATCAG-GTCCTAAG count: 209
+Index pair ACGATCAG-TCGACAAG count: 166
+Index pair ACGATCAG-TCTTCGAC count: 483
+Index pair ACGATCAG-ATCATGCG count: 220
+Index pair ACGATCAG-ATCGTGGT count: 117
+Index pair ACGATCAG-TCGAGAGT count: 239
+Index pair ACGATCAG-TCGGATTC count: 64
+Index pair ACGATCAG-GATCTTGC count: 66
+Index pair ACGATCAG-AGAGTCCA count: 207
+Index pair ACGATCAG-AGGATAGC count: 183
+Index pair TATGGCAC-GTAGCGTA count: 152
+Index pair TATGGCAC-CGATCGAT count: 113
+Index pair TATGGCAC-GATCAAGG count: 152
+Index pair TATGGCAC-AACAGCGA count: 335
+Index pair TATGGCAC-TAGCCATG count: 234
+Index pair TATGGCAC-CGGTAATC count: 143
+Index pair TATGGCAC-CTCTGGAT count: 720
+Index pair TATGGCAC-TACCGGAT count: 2105
+Index pair TATGGCAC-CTAGCTCA count: 346
+Index pair TATGGCAC-CACTTCAC count: 203
+Index pair TATGGCAC-GCTACTCT count: 119
+Index pair TATGGCAC-ACGATCAG count: 230
+Index pair TATGGCAC-TATGGCAC count: 7880872
+Index pair TATGGCAC-TGTTCCGT count: 63153
+Index pair TATGGCAC-GTCCTAAG count: 395
+Index pair TATGGCAC-TCGACAAG count: 107
+Index pair TATGGCAC-TCTTCGAC count: 1885
+Index pair TATGGCAC-ATCATGCG count: 209
+Index pair TATGGCAC-ATCGTGGT count: 142
+Index pair TATGGCAC-TCGAGAGT count: 471
+Index pair TATGGCAC-TCGGATTC count: 585
+Index pair TATGGCAC-GATCTTGC count: 170
+Index pair TATGGCAC-AGAGTCCA count: 186
+Index pair TATGGCAC-AGGATAGC count: 273
+Index pair TGTTCCGT-GTAGCGTA count: 246
+Index pair TGTTCCGT-CGATCGAT count: 259
+Index pair TGTTCCGT-GATCAAGG count: 147
+Index pair TGTTCCGT-AACAGCGA count: 439
+Index pair TGTTCCGT-TAGCCATG count: 257
+Index pair TGTTCCGT-CGGTAATC count: 104
+Index pair TGTTCCGT-CTCTGGAT count: 871
+Index pair TGTTCCGT-TACCGGAT count: 2021
+Index pair TGTTCCGT-CTAGCTCA count: 388
+Index pair TGTTCCGT-CACTTCAC count: 118
+Index pair TGTTCCGT-GCTACTCT count: 188
+Index pair TGTTCCGT-ACGATCAG count: 230
+Index pair TGTTCCGT-TATGGCAC count: 61181
+Index pair TGTTCCGT-TGTTCCGT count: 12247310
+Index pair TGTTCCGT-GTCCTAAG count: 172
+Index pair TGTTCCGT-TCGACAAG count: 111
+Index pair TGTTCCGT-TCTTCGAC count: 1260
+Index pair TGTTCCGT-ATCATGCG count: 317
+Index pair TGTTCCGT-ATCGTGGT count: 202
+Index pair TGTTCCGT-TCGAGAGT count: 418
+Index pair TGTTCCGT-TCGGATTC count: 533
+Index pair TGTTCCGT-GATCTTGC count: 182
+Index pair TGTTCCGT-AGAGTCCA count: 383
+Index pair TGTTCCGT-AGGATAGC count: 217
+Index pair GTCCTAAG-GTAGCGTA count: 147
+Index pair GTCCTAAG-CGATCGAT count: 125
+Index pair GTCCTAAG-GATCAAGG count: 174
+Index pair GTCCTAAG-AACAGCGA count: 223
+Index pair GTCCTAAG-TAGCCATG count: 179
+Index pair GTCCTAAG-CGGTAATC count: 70
+Index pair GTCCTAAG-CTCTGGAT count: 451
+Index pair GTCCTAAG-TACCGGAT count: 898
+Index pair GTCCTAAG-CTAGCTCA count: 202
+Index pair GTCCTAAG-CACTTCAC count: 47
+Index pair GTCCTAAG-GCTACTCT count: 114
+Index pair GTCCTAAG-ACGATCAG count: 156
+Index pair GTCCTAAG-TATGGCAC count: 4869
+Index pair GTCCTAAG-TGTTCCGT count: 493
+Index pair GTCCTAAG-GTCCTAAG count: 6658709
+Index pair GTCCTAAG-TCGACAAG count: 92
+Index pair GTCCTAAG-TCTTCGAC count: 516
+Index pair GTCCTAAG-ATCATGCG count: 169
+Index pair GTCCTAAG-ATCGTGGT count: 95
+Index pair GTCCTAAG-TCGAGAGT count: 162
+Index pair GTCCTAAG-TCGGATTC count: 158
+Index pair GTCCTAAG-GATCTTGC count: 95
+Index pair GTCCTAAG-AGAGTCCA count: 135
+Index pair GTCCTAAG-AGGATAGC count: 120
+Index pair TCGACAAG-GTAGCGTA count: 47
+Index pair TCGACAAG-CGATCGAT count: 47
+Index pair TCGACAAG-GATCAAGG count: 52
+Index pair TCGACAAG-AACAGCGA count: 41
+Index pair TCGACAAG-TAGCCATG count: 121
+Index pair TCGACAAG-CGGTAATC count: 22
+Index pair TCGACAAG-CTCTGGAT count: 191
+Index pair TCGACAAG-TACCGGAT count: 320
+Index pair TCGACAAG-CTAGCTCA count: 101
+Index pair TCGACAAG-CACTTCAC count: 14
+Index pair TCGACAAG-GCTACTCT count: 44
+Index pair TCGACAAG-ACGATCAG count: 117
+Index pair TCGACAAG-TATGGCAC count: 61
+Index pair TCGACAAG-TGTTCCGT count: 81
+Index pair TCGACAAG-GTCCTAAG count: 112
+Index pair TCGACAAG-TCGACAAG count: 2786134
+Index pair TCGACAAG-TCTTCGAC count: 234
+Index pair TCGACAAG-ATCATGCG count: 5896
+Index pair TCGACAAG-ATCGTGGT count: 44
+Index pair TCGACAAG-TCGAGAGT count: 142
+Index pair TCGACAAG-TCGGATTC count: 45
+Index pair TCGACAAG-GATCTTGC count: 23
+Index pair TCGACAAG-AGAGTCCA count: 55
+Index pair TCGACAAG-AGGATAGC count: 75
+Index pair TCTTCGAC-GTAGCGTA count: 551
+Index pair TCTTCGAC-CGATCGAT count: 573
+Index pair TCTTCGAC-GATCAAGG count: 1079
+Index pair TCTTCGAC-AACAGCGA count: 400
+Index pair TCTTCGAC-TAGCCATG count: 701
+Index pair TCTTCGAC-CGGTAATC count: 525
+Index pair TCTTCGAC-CTCTGGAT count: 2747
+Index pair TCTTCGAC-TACCGGAT count: 4550
+Index pair TCTTCGAC-CTAGCTCA count: 1144
+Index pair TCTTCGAC-CACTTCAC count: 389
+Index pair TCTTCGAC-GCTACTCT count: 525
+Index pair TCTTCGAC-ACGATCAG count: 722
+Index pair TCTTCGAC-TATGGCAC count: 1250
+Index pair TCTTCGAC-TGTTCCGT count: 1413
+Index pair TCTTCGAC-GTCCTAAG count: 573
+Index pair TCTTCGAC-TCGACAAG count: 398
+Index pair TCTTCGAC-TCTTCGAC count: 31203016
+Index pair TCTTCGAC-ATCATGCG count: 617
+Index pair TCTTCGAC-ATCGTGGT count: 3083
+Index pair TCTTCGAC-TCGAGAGT count: 1170
+Index pair TCTTCGAC-TCGGATTC count: 651
+Index pair TCTTCGAC-GATCTTGC count: 499
+Index pair TCTTCGAC-AGAGTCCA count: 623
+Index pair TCTTCGAC-AGGATAGC count: 873
+Index pair ATCATGCG-GTAGCGTA count: 134
+Index pair ATCATGCG-CGATCGAT count: 107
+Index pair ATCATGCG-GATCAAGG count: 219
+Index pair ATCATGCG-AACAGCGA count: 219
+Index pair ATCATGCG-TAGCCATG count: 384
+Index pair ATCATGCG-CGGTAATC count: 79
+Index pair ATCATGCG-CTCTGGAT count: 582
+Index pair ATCATGCG-TACCGGAT count: 932
+Index pair ATCATGCG-CTAGCTCA count: 294
+Index pair ATCATGCG-CACTTCAC count: 79
+Index pair ATCATGCG-GCTACTCT count: 138
+Index pair ATCATGCG-ACGATCAG count: 370
+Index pair ATCATGCG-TATGGCAC count: 428
+Index pair ATCATGCG-TGTTCCGT count: 298
+Index pair ATCATGCG-GTCCTAAG count: 292
+Index pair ATCATGCG-TCGACAAG count: 151
+Index pair ATCATGCG-TCTTCGAC count: 736
+Index pair ATCATGCG-ATCATGCG count: 7448228
+Index pair ATCATGCG-ATCGTGGT count: 195
+Index pair ATCATGCG-TCGAGAGT count: 188
+Index pair ATCATGCG-TCGGATTC count: 77
+Index pair ATCATGCG-GATCTTGC count: 110
+Index pair ATCATGCG-AGAGTCCA count: 233
+Index pair ATCATGCG-AGGATAGC count: 259
+Index pair ATCGTGGT-GTAGCGTA count: 112
+Index pair ATCGTGGT-CGATCGAT count: 101
+Index pair ATCGTGGT-GATCAAGG count: 380
+Index pair ATCGTGGT-AACAGCGA count: 83
+Index pair ATCGTGGT-TAGCCATG count: 96
+Index pair ATCGTGGT-CGGTAATC count: 77
+Index pair ATCGTGGT-CTCTGGAT count: 534
+Index pair ATCGTGGT-TACCGGAT count: 814
+Index pair ATCGTGGT-CTAGCTCA count: 179
+Index pair ATCGTGGT-CACTTCAC count: 29
+Index pair ATCGTGGT-GCTACTCT count: 89
+Index pair ATCGTGGT-ACGATCAG count: 144
+Index pair ATCGTGGT-TATGGCAC count: 139
+Index pair ATCGTGGT-TGTTCCGT count: 160
+Index pair ATCGTGGT-GTCCTAAG count: 75
+Index pair ATCGTGGT-TCGACAAG count: 53
+Index pair ATCGTGGT-TCTTCGAC count: 662
+Index pair ATCGTGGT-ATCATGCG count: 140
+Index pair ATCGTGGT-ATCGTGGT count: 5031584
+Index pair ATCGTGGT-TCGAGAGT count: 201
+Index pair ATCGTGGT-TCGGATTC count: 64
+Index pair ATCGTGGT-GATCTTGC count: 57
+Index pair ATCGTGGT-AGAGTCCA count: 135
+Index pair ATCGTGGT-AGGATAGC count: 128
+Index pair TCGAGAGT-GTAGCGTA count: 163
+Index pair TCGAGAGT-CGATCGAT count: 151
+Index pair TCGAGAGT-GATCAAGG count: 109
+Index pair TCGAGAGT-AACAGCGA count: 137
+Index pair TCGAGAGT-TAGCCATG count: 156
+Index pair TCGAGAGT-CGGTAATC count: 112
+Index pair TCGAGAGT-CTCTGGAT count: 796
+Index pair TCGAGAGT-TACCGGAT count: 1410
+Index pair TCGAGAGT-CTAGCTCA count: 330
+Index pair TCGAGAGT-CACTTCAC count: 49
+Index pair TCGAGAGT-GCTACTCT count: 276
+Index pair TCGAGAGT-ACGATCAG count: 294
+Index pair TCGAGAGT-TATGGCAC count: 184
+Index pair TCGAGAGT-TGTTCCGT count: 394
+Index pair TCGAGAGT-GTCCTAAG count: 148
+Index pair TCGAGAGT-TCGACAAG count: 131
+Index pair TCGAGAGT-TCTTCGAC count: 724
+Index pair TCGAGAGT-ATCATGCG count: 154
+Index pair TCGAGAGT-ATCGTGGT count: 198
+Index pair TCGAGAGT-TCGAGAGT count: 7791551
+Index pair TCGAGAGT-TCGGATTC count: 177
+Index pair TCGAGAGT-GATCTTGC count: 78
+Index pair TCGAGAGT-AGAGTCCA count: 173
+Index pair TCGAGAGT-AGGATAGC count: 225
+Index pair TCGGATTC-GTAGCGTA count: 43
+Index pair TCGGATTC-CGATCGAT count: 130
+Index pair TCGGATTC-GATCAAGG count: 48
+Index pair TCGGATTC-AACAGCGA count: 584
+Index pair TCGGATTC-TAGCCATG count: 54
+Index pair TCGGATTC-CGGTAATC count: 62
+Index pair TCGGATTC-CTCTGGAT count: 275
+Index pair TCGGATTC-TACCGGAT count: 404
+Index pair TCGGATTC-CTAGCTCA count: 139
+Index pair TCGGATTC-CACTTCAC count: 45
+Index pair TCGGATTC-GCTACTCT count: 40
+Index pair TCGGATTC-ACGATCAG count: 78
+Index pair TCGGATTC-TATGGCAC count: 159
+Index pair TCGGATTC-TGTTCCGT count: 103
+Index pair TCGGATTC-GTCCTAAG count: 66
+Index pair TCGGATTC-TCGACAAG count: 25
+Index pair TCGGATTC-TCTTCGAC count: 386
+Index pair TCGGATTC-ATCATGCG count: 65
+Index pair TCGGATTC-ATCGTGGT count: 47
+Index pair TCGGATTC-TCGAGAGT count: 89
+Index pair TCGGATTC-TCGGATTC count: 3149983
+Index pair TCGGATTC-GATCTTGC count: 156
+Index pair TCGGATTC-AGAGTCCA count: 76
+Index pair TCGGATTC-AGGATAGC count: 107
+Index pair GATCTTGC-GTAGCGTA count: 76
+Index pair GATCTTGC-CGATCGAT count: 112
+Index pair GATCTTGC-GATCAAGG count: 72
+Index pair GATCTTGC-AACAGCGA count: 82
+Index pair GATCTTGC-TAGCCATG count: 56
+Index pair GATCTTGC-CGGTAATC count: 53
+Index pair GATCTTGC-CTCTGGAT count: 183
+Index pair GATCTTGC-TACCGGAT count: 329
+Index pair GATCTTGC-CTAGCTCA count: 99
+Index pair GATCTTGC-CACTTCAC count: 45
+Index pair GATCTTGC-GCTACTCT count: 61
+Index pair GATCTTGC-ACGATCAG count: 66
+Index pair GATCTTGC-TATGGCAC count: 121
+Index pair GATCTTGC-TGTTCCGT count: 78
+Index pair GATCTTGC-GTCCTAAG count: 79
+Index pair GATCTTGC-TCGACAAG count: 19
+Index pair GATCTTGC-TCTTCGAC count: 320
+Index pair GATCTTGC-ATCATGCG count: 95
+Index pair GATCTTGC-ATCGTGGT count: 33
+Index pair GATCTTGC-TCGAGAGT count: 68
+Index pair GATCTTGC-TCGGATTC count: 36
+Index pair GATCTTGC-GATCTTGC count: 2861868
+Index pair GATCTTGC-AGAGTCCA count: 82
+Index pair GATCTTGC-AGGATAGC count: 197
+Index pair AGAGTCCA-GTAGCGTA count: 660
+Index pair AGAGTCCA-CGATCGAT count: 120
+Index pair AGAGTCCA-GATCAAGG count: 86
+Index pair AGAGTCCA-AACAGCGA count: 216
+Index pair AGAGTCCA-TAGCCATG count: 149
+Index pair AGAGTCCA-CGGTAATC count: 76
+Index pair AGAGTCCA-CTCTGGAT count: 409
+Index pair AGAGTCCA-TACCGGAT count: 949
+Index pair AGAGTCCA-CTAGCTCA count: 456
+Index pair AGAGTCCA-CACTTCAC count: 63
+Index pair AGAGTCCA-GCTACTCT count: 131
+Index pair AGAGTCCA-ACGATCAG count: 268
+Index pair AGAGTCCA-TATGGCAC count: 192
+Index pair AGAGTCCA-TGTTCCGT count: 293
+Index pair AGAGTCCA-GTCCTAAG count: 123
+Index pair AGAGTCCA-TCGACAAG count: 55
+Index pair AGAGTCCA-TCTTCGAC count: 548
+Index pair AGAGTCCA-ATCATGCG count: 176
+Index pair AGAGTCCA-ATCGTGGT count: 137
+Index pair AGAGTCCA-TCGAGAGT count: 527
+Index pair AGAGTCCA-TCGGATTC count: 89
+Index pair AGAGTCCA-GATCTTGC count: 71
+Index pair AGAGTCCA-AGAGTCCA count: 8234276
+Index pair AGAGTCCA-AGGATAGC count: 187
+Index pair AGGATAGC-GTAGCGTA count: 495
+Index pair AGGATAGC-CGATCGAT count: 124
+Index pair AGGATAGC-GATCAAGG count: 69
+Index pair AGGATAGC-AACAGCGA count: 140
+Index pair AGGATAGC-TAGCCATG count: 116
+Index pair AGGATAGC-CGGTAATC count: 101
+Index pair AGGATAGC-CTCTGGAT count: 310
+Index pair AGGATAGC-TACCGGAT count: 645
+Index pair AGGATAGC-CTAGCTCA count: 190
+Index pair AGGATAGC-CACTTCAC count: 134
+Index pair AGGATAGC-GCTACTCT count: 171
+Index pair AGGATAGC-ACGATCAG count: 228
+Index pair AGGATAGC-TATGGCAC count: 198
+Index pair AGGATAGC-TGTTCCGT count: 195
+Index pair AGGATAGC-GTCCTAAG count: 85
+Index pair AGGATAGC-TCGACAAG count: 52
+Index pair AGGATAGC-TCTTCGAC count: 615
+Index pair AGGATAGC-ATCATGCG count: 213
+Index pair AGGATAGC-ATCGTGGT count: 91
+Index pair AGGATAGC-TCGAGAGT count: 167
+Index pair AGGATAGC-TCGGATTC count: 113
+Index pair AGGATAGC-GATCTTGC count: 259
+Index pair AGGATAGC-AGAGTCCA count: 196
+Index pair AGGATAGC-AGGATAGC count: 6571536
+	Command being timed: "./Assignment-the-third/demultiplex.py --read1 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R1_001.fastq.gz --read2 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz --read3 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz --read4 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R4_001.fastq.gz -i /projects/bgmp/shared/2017_sequencing/indexes.txt -c 35"
+	User time (seconds): 4567.64
+	System time (seconds): 25.98
+	Percent of CPU this job got: 90%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:25:03
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 247588
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 38316
+	Voluntary context switches: 48233
+	Involuntary context switches: 2725
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -9,6 +9,9 @@
 
 # this script should be ran from the main git repo "Demultiplex"
 
+conda activate bgmp.py312
+conda list
+
 # ./Assignment-the-third/demultiplex.py \ # for test run:
 	# --read1 TEST-input_FASTQ/testwkg_R1.fq.gz \
 	# --read2 TEST-input_FASTQ/testwkg_R2.fq.gz \
@@ -17,10 +20,13 @@
 	# -i TEST-input_FASTQ/testwkg_indexes.txt \
 	# -c 30
 
-./Assignment-the-third/demultiplex.py \ # for final run:
+#for final run: 
+/usr/bin/time -v ./Assignment-the-third/demultiplex.py \
 	--read1 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R1_001.fastq.gz \
 	--read2 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz \
 	--read3 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz \
 	--read4 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R4_001.fastq.gz \
 	-i /projects/bgmp/shared/2017_sequencing/indexes.txt \
-	-c 35 \
+	-c 35
+
+conda deactivate
