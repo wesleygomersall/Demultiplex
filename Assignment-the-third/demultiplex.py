@@ -76,14 +76,14 @@ with open(INDEXES, 'r') as fin:
         filenamingdict[sequence] = index # add entry to dictionary: key is sequence, value is the name
 
 allpairsdict = dict() 
-matchedindexdict = dict()
+matchedindexlist = []
 
 for i in indexsequencelist:
     for j in indexsequencelist:
-        pair = (i, reverse_complement(j)) #tuple of indexes as they appear in R2 and (reverse complemented in) R3
+        pair = (i, j) #tuple of indexes as they appear in R2 and (reverse complemented in) R3
         allpairsdict.setdefault(pair, 0) # use this dictionary to increment found (hopped and matched) pairs. 
         if i == j: 
-            matchedindexdict.setdefault(pair, f"{i}_{j}") #if R2 and R3 sequences match tuple key, append value to headers. 
+            matchedindexlist.append(pair) #list of matched indexes
 
 filenames = [] # create a list of filenames
 for i in indexsequencelist: #for index-matched files, create filenames
@@ -95,14 +95,20 @@ for i in ["unk", "hopped"]: #need to make files for unknown reads and for hopped
 
 filedata = {filename: open(filename, 'w') for filename in filenames} #open all the files to write to
 
+# THIS NEEDS TO BE GZIP NOT OPEN
 with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, open(READ4, 'r') as r4: #open to read all 4 files
-    linenum = 0
+    linenum: int = 0
+
+    matchedcount: int = 0
+    hoppedcount: int = 0
+    unkcount: int = 0 
+
     while True: 
         unknown: bool = False
         matched: bool = False
         hopped: bool = False
 
-        r1line, r2line, r3line, r4line = r1.readline().strip('\n'), r2.readline().strip('\n'), r3.readline().strip('\n'), r4.readline().strip('\n')
+        r1line, r2line, r3line, r4line = r1.readline().strip(), r2.readline().strip(), r3.readline().strip(), r4.readline().strip()
 
         if r1line == "": # end of file
             break # stop loop
@@ -115,33 +121,55 @@ with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, ope
             r1plus, r2plus, r3plus, r4plus = r1line, r2line, r3line, r4line
         elif linenum % 4 == 3: #quality score line
             r1phred, r2phred, r3phred, r4phred = r1line, r2line, r3line, r4line
+            
+            indextuple = (r2seq, reverse_complement(r3seq)) # this tuple will be compared to keys of allpairsdict first
+            seqpair = f"{indextuple[0]}_{indextuple[1]}"
 
-            # whenever we reach the end of an entry: 
-            if bioinfo.qual_score(r2phred) < CUTOFF or bioinfo.qual_score(r3phred) < CUTOFF: # first, check for quality of r2phred and r3phred
+            if bioinfo.qual_score(r2phred) < CUTOFF or bioinfo.qual_score(r3phred) < CUTOFF or check_n(r2seq) or check_n(r3seq): # first, check for unknown
                 unknown = True # bad quality indexes, these are unknowns
             else:
-                indextuple = (r2seq, r3seq)
+                if indextuple in allpairsdict.keys():  #this is either hopped or matched
+                    allpairsdict[indextuple] += 1 # freq +1 for this pair
+                    if indextuple[0] == indextuple[1]:  
+                        matched = True #matched if this tuple is in both the allpairsdict and the matchedindexdict
+                    elif indextuple[0] != indextuple[1]:  
+                        hopped = True # hopped if it is in allpairsdict but not in the matchedindexdict
 
-            # next check if the sequences r2seq and r3seq are in keys of allpairsdict
-                # not inside -> unknown = True, 
-                # is inside -> unknown = False (definitively), must be hopped or matched, incriment here
-                    #if (is inside), check if it is in matchedindexdict 
-                        # is in matchedindexdict
-                            # matched index = True
-                            # add value of matchedindexdict to headers: r1head and r4head
-            
+                    else: #reads should not be ending up here
+                        print(f"Error: this case is impossible. check lines: {linenum-3}-{linenum}")
+
+                elif indextuple not in allpairsdict.keys():
+                    unknown = True #this is not a hopped or a matched index (it is unknown, passes qual, and no 'N', but not an index)
+
+                else: #reads should not be ending up here
+                    print(f"this is an error, no read should be here. check lines: {linenum-3}-{linenum}")
+
             if unknown:
-                print("unk read")
-                # need to append to headers (reverse comp R3 seq)
+                unkcount += 1
+                fname = "./output/unk"
                 # write to files ./output/unk_R1.fq and ./output/unk_R2.fq
-            if hopped:
-                print("hopped read")
-                # need to append to headers (reverse comp R3 seq)
+            elif hopped:
+                hoppedcount += 1
+                fname = "./output/hopped"
                 # write to files ./output/hopped_R1.fq and ./output/hopped_R2.fq
-            if matched:
-                print("matched read")
-                # need to append to headers (made dictionary for this one)
-                # write to files ./output/<indexname>_R1.fq and ./output/<indexname>_R1.fq
+            elif matched:
+                matchedcount += 1
+                fname = f"./output/{filenamingdict[r2seq]}"
+                # write to files ./output/<index>_R1.fq and ./output/<index>_R2.fq
+            else: print(f"Error: unclassified read. check lines {linenum-3}-{linenum}")
+
+            # write to files ./output/<indexname>_R1.fq and ./output/<indexname>_R1.fq
+            # here
+            filedata[f"{fname}_R1.fq"].write(f"{r1head} {seqpair}\n")
+            filedata[f"{fname}_R1.fq"].write(f"{r1seq}\n")
+            filedata[f"{fname}_R1.fq"].write(f"{r1plus}\n")
+            filedata[f"{fname}_R1.fq"].write(f"{r1phred}\n")
+
+            filedata[f"{fname}_R2.fq"].write(f"{r4head} {seqpair}\n")
+            filedata[f"{fname}_R2.fq"].write(f"{r4seq}\n")
+            filedata[f"{fname}_R2.fq"].write(f"{r4plus}\n")
+            filedata[f"{fname}_R2.fq"].write(f"{r4phred}\n")
+
         linenum += 1
 
 # filedata["./output/A5_R1.fq"].write("Hello World") #will write "hello world" to file "./output/A5_R1.fq"
