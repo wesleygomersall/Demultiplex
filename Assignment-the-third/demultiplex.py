@@ -63,17 +63,14 @@ assert check_n("ACTCGCT") == False
 assert check_n("ACTCGNT") == True
 assert check_n("ACNCGCT") == True
 
-filenamingdict = dict() 
 indexsequencelist = []
 
 with open(INDEXES, 'r') as fin:
     for i, line in enumerate(fin): 
         if i == 0 :
             continue
-        index = line.strip('\n').split()[3] # the 4th column from file holds index names
         sequence = line.strip('\n').split()[4] # the final column from file holds index sequences
         indexsequencelist.append(sequence) # simple list of sequences to loop through for dictionaries
-        filenamingdict[sequence] = index # add entry to dictionary: key is sequence, value is the name
 
 allpairsdict = dict() 
 matchedindexlist = []
@@ -91,13 +88,13 @@ unkcount: int = 0
 
 filenames = [] # create a list of filenames
 for i in indexsequencelist: #for index-matched files, create filenames
-    filenames.append(f"./output/{filenamingdict[i]}_R1.fq.gz")
-    filenames.append(f"./output/{filenamingdict[i]}_R2.fq.gz")
+    filenames.append(f"./output/{i}_R1.fq")
+    filenames.append(f"./output/{i}_R2.fq")
 for i in ["unk", "hopped"]: #need to make files for unknown reads and for hopped reads
-    filenames.append(f"./output/{i}_R1.fq.gz")
-    filenames.append(f"./output/{i}_R2.fq.gz")
+    filenames.append(f"./output/{i}_R1.fq")
+    filenames.append(f"./output/{i}_R2.fq")
 
-filedata = {filename: gzip.open(filename, 'wt') for filename in filenames} #open all the files to write to
+filewritedict = {filename: open(filename, 'w') for filename in filenames} #open all the files to write to
 
 with gzip.open(READ1, 'rt') as r1, gzip.open(READ2, 'rt') as r2, gzip.open(READ3, 'rt') as r3, gzip.open(READ4, 'rt') as r4: #open to read all 4 files (.gz)
 #with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, open(READ4, 'r') as r4: #open to read all 4 files (unzipped)
@@ -154,26 +151,25 @@ with gzip.open(READ1, 'rt') as r1, gzip.open(READ2, 'rt') as r2, gzip.open(READ3
                 fname = "./output/hopped" # write to files ./output/hopped_R1.fq and ./output/hopped_R2.fq
             elif matched:
                 matchedcount += 1
-                fname = f"./output/{filenamingdict[r2seq]}" # write to files ./output/<index>_R1.fq and ./output/<index>_R2.fq
+                fname = f"./output/{r2seq}" # write to files ./output/<index>_R1.fq and ./output/<index>_R2.fq
             else: print(f"Error: unclassified read. check lines {linenum-3}-{linenum}")
 
             # write to files ./output/<indexname>_R1.fq and ./output/<indexname>_R1.fq
-            # here
-            filedata[f"{fname}_R1.fq.gz"].write(f"{r1head} {seqpair}\n") # type: ignore
-            filedata[f"{fname}_R1.fq.gz"].write(f"{r1seq}\n") # type: ignore
-            filedata[f"{fname}_R1.fq.gz"].write(f"{r1plus}\n")# type: ignore
-            filedata[f"{fname}_R1.fq.gz"].write(f"{r1phred}\n")# type: ignore
+            filewritedict[f"{fname}_R1.fq"].write(f"{r1head} {seqpair}\n")
+            filewritedict[f"{fname}_R1.fq"].write(f"{r1seq}\n")
+            filewritedict[f"{fname}_R1.fq"].write(f"{r1plus}\n")
+            filewritedict[f"{fname}_R1.fq"].write(f"{r1phred}\n")
 
-            filedata[f"{fname}_R2.fq.gz"].write(f"{r4head} {seqpair}\n")# type: ignore
-            filedata[f"{fname}_R2.fq.gz"].write(f"{r4seq}\n")# type: ignore
-            filedata[f"{fname}_R2.fq.gz"].write(f"{r4plus}\n")# type: ignore
-            filedata[f"{fname}_R2.fq.gz"].write(f"{r4phred}\n")# type: ignore
+            filewritedict[f"{fname}_R2.fq"].write(f"{r4head} {seqpair}\n")
+            filewritedict[f"{fname}_R2.fq"].write(f"{r4seq}\n")
+            filewritedict[f"{fname}_R2.fq"].write(f"{r4plus}\n")
+            filewritedict[f"{fname}_R2.fq"].write(f"{r4phred}\n")
 
         linenum += 1
 
-# filedata["./output/A5_R1.fq"].write("Hello World") #will write "hello world" to file "./output/A5_R1.fq"
+# filewritedict["./output/A5_R1.fq"].write("Hello World") #will write "hello world" to file "./output/A5_R1.fq"
 
-for file in filedata.values(): # close all the writing files
+for file in filewritedict.values(): # close all the writing files
     file.close()
 
 

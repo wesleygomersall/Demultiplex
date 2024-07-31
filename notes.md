@@ -149,9 +149,12 @@ And it works! I will add a print out of the count dictionary (the large one) and
 
 ## 2024-07-31
 
-### Need to do 
+Pylance is going crazy. I will just use `# type: ignore` to silence them.  
 
-Figure out why Pylance is going crazy. 
+Change naming scheme: Use the barcode sequences themselves, not the shorter names.  
 
-Finalize naming scheme, ask leslie. 
-- Idea: "./output/{inputfilename, truncated}_{index or index sequence?}_R1.fq
+Also need to change to not writing to compressed files.  
+
+Change the expected output file names to match the new file naming system. 
+
+Create slurm script for running demultiplex.py
