@@ -154,5 +154,4 @@ And it works! I will add a print out of the count dictionary (the large one) and
 Figure out why Pylance is going crazy. 
 
 Finalize naming scheme, ask leslie. 
-
-Idea: "./output/{inputfilename, truncated}_{index or index sequence?}_R1.fq
+- Idea: "./output/{inputfilename, truncated}_{index or index sequence?}_R1.fq

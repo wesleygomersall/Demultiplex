@@ -85,6 +85,10 @@ for i in indexsequencelist:
         if i == j: 
             matchedindexlist.append(pair) #list of matched indexes
 
+matchedcount: int = 0
+hoppedcount: int = 0
+unkcount: int = 0 
+
 filenames = [] # create a list of filenames
 for i in indexsequencelist: #for index-matched files, create filenames
     filenames.append(f"./output/{filenamingdict[i]}_R1.fq.gz")
@@ -99,9 +103,7 @@ with gzip.open(READ1, 'rt') as r1, gzip.open(READ2, 'rt') as r2, gzip.open(READ3
 #with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, open(READ4, 'r') as r4: #open to read all 4 files (unzipped)
     linenum: int = 0
 
-    matchedcount: int = 0
-    hoppedcount: int = 0
-    unkcount: int = 0 
+
 
     while True: 
         unknown: bool = False
@@ -146,16 +148,13 @@ with gzip.open(READ1, 'rt') as r1, gzip.open(READ2, 'rt') as r2, gzip.open(READ3
 
             if unknown:
                 unkcount += 1
-                fname = "./output/unk"
-                # write to files ./output/unk_R1.fq and ./output/unk_R2.fq
+                fname = "./output/unk" # write to files ./output/unk_R1.fq and ./output/unk_R2.fq
             elif hopped:
                 hoppedcount += 1
-                fname = "./output/hopped"
-                # write to files ./output/hopped_R1.fq and ./output/hopped_R2.fq
+                fname = "./output/hopped" # write to files ./output/hopped_R1.fq and ./output/hopped_R2.fq
             elif matched:
                 matchedcount += 1
-                fname = f"./output/{filenamingdict[r2seq]}"
-                # write to files ./output/<index>_R1.fq and ./output/<index>_R2.fq
+                fname = f"./output/{filenamingdict[r2seq]}" # write to files ./output/<index>_R1.fq and ./output/<index>_R2.fq
             else: print(f"Error: unclassified read. check lines {linenum-3}-{linenum}")
 
             # write to files ./output/<indexname>_R1.fq and ./output/<indexname>_R1.fq
@@ -178,6 +177,9 @@ for file in filedata.values(): # close all the writing files
     file.close()
 
 
-print(f"Count of hopped reads: {hoppedcount}")
-print(f"Count of matched-index reads: {matchedcount}")
-print(f"Count the number of unknown indexed reads: {unkcount}")
+print(f"Hopped read count: {hoppedcount}")
+print(f"Matched-index read count: {matchedcount}")
+print(f"Unknown-indexed read count: {unkcount}")
+
+for i in allpairsdict.keys():
+    print(f"Index pair {i[0]}-{i[1]} count: {allpairsdict[i]}")
