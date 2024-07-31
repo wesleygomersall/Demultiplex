@@ -45,7 +45,7 @@ $ zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R1_001.fastq.gz | wc -
 1452986940
 $ zcat /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R2_001.fastq.gz | wc -l
 1452986940
-$ cat indexes.txt 
+$ cat /projects/bgmp/shared/2017_sequencing/indexes.txt 
 sample  group   treatment       index   index sequence
 1       2A      control B1      GTAGCGTA
 2       2B      control A5      CGATCGAT
@@ -139,11 +139,9 @@ This code demultiplexes the test files. It will not work on real data in its cur
 The code to open these files is commented to swap between gzip.open and open
 
 Comment out the `open` for `gzip.open` lines and try the series of commands:
-```
-gzip ~/bioinfo/Bi622/Demultiplex/TEST-input_FASTQ/testwkg_R*.fq
 
-./Assignment-the-third/demultiplex.py --read1 TEST-input_FASTQ/testwkg_R1.fq.gz --read2 TEST-input_FASTQ/testwkg_R2.fq.gz --read3 TEST-input_FASTQ/testwkg_R3.fq.gz --read4 TEST-input_FASTQ/testwkg_R4.fq.gz -i TEST-input_FASTQ/testwkg_indexes.txt -c 30
-```
+	gzip ~/bioinfo/Bi622/Demultiplex/TEST-input_FASTQ/testwkg_R*.fq
+	./Assignment-the-third/demultiplex.py --read1 TEST-input_FASTQ/testwkg_R1.fq.gz --read2 TEST-input_FASTQ/testwkg_R2.fq.gz --read3 TEST-input_FASTQ/testwkg_R3.fq.gz --read4 TEST-input_FASTQ/testwkg_R4.fq.gz -i TEST-input_FASTQ/testwkg_indexes.txt -c 30
 
 And it works! I will add a print out of the count dictionary (the large one) and this script should be just about ready for the full data set. 
 
@@ -157,4 +155,4 @@ Also need to change to not writing to compressed files.
 
 Change the expected output file names to match the new file naming system. 
 
-Create slurm script for running demultiplex.py
+Create [slurm script](./Assignment-the-third/demultiplex_slurm.sh) for running demultiplex.py
