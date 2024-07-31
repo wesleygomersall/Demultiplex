@@ -128,3 +128,31 @@ Created python functions `check_n` and `reverse_complement` to import into my sc
 Leslie says we should not be using these functions in bioinfo.py. Oops. I will just copy and paste them into my new script and comment them out of bioinfo.py for now.  
 
 Begin scripting for Assignment-the-third. [demultiplex.py](./Assignment-the-third/demultiplex.py)
+
+This is the command to test out the code. 
+
+```
+./Assignment-the-third/demultiplex.py --read1 TEST-input_FASTQ/testwkg_R1.fq --read2 TEST-input_FASTQ/testwkg_R2.fq --read3 TEST-input_FASTQ/testwkg_R3.fq --read4 TEST-input_FASTQ/testwkg_R4.fq -i TEST-input_FASTQ/testwkg_indexes.txt -c 30
+```
+
+This code demultiplexes the test files. It will not work on real data in its current state because it is not reading compressed files. 
+The code to open these files is commented to swap between gzip.open and open
+
+Comment out the `open` for `gzip.open` lines and try the series of commands:
+```
+gzip ~/bioinfo/Bi622/Demultiplex/TEST-input_FASTQ/testwkg_R*.fq
+
+./Assignment-the-third/demultiplex.py --read1 TEST-input_FASTQ/testwkg_R1.fq.gz --read2 TEST-input_FASTQ/testwkg_R2.fq.gz --read3 TEST-input_FASTQ/testwkg_R3.fq.gz --read4 TEST-input_FASTQ/testwkg_R4.fq.gz -i TEST-input_FASTQ/testwkg_indexes.txt -c 30
+```
+
+And it works! I will add a print out of the count dictionary (the large one) and this script should be just about ready for the full data set. 
+
+## 2024-07-31
+
+### Need to do 
+
+Figure out why Pylance is going crazy. 
+
+Finalize naming scheme, ask leslie. 
+
+Idea: "./output/{inputfilename, truncated}_{index or index sequence?}_R1.fq

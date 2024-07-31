@@ -11,15 +11,15 @@ def get_args():
     parser.add_argument("--read3", help="Illumina R3 fastq file.", type=str, required=True) 
     parser.add_argument("--read4", help="Illumina R4 fastq file.", type=str, required=True) 
     parser.add_argument("-i", "--indexes", help="Indexes to use for checking dual-indexes", type=str, required=True) 
-    # parser.add_argument("-c", "--cutoff", help="Lowest allowed mean quality of indexes", type=str, required=True) 
+    parser.add_argument("-c", "--cutoff", help="Lowest allowed mean quality of indexes", type=int, required=True) 
     return parser.parse_args()
 
 READ1 = get_args().read1
 READ2 = get_args().read2
 READ3 = get_args().read3
 READ4 = get_args().read4
-INDEXES = get_args().indexes #"../indexes.txt"
-CUTOFF = 30 # get_args().cutoff ###################################CHANGE THIS ONE LATER! 
+INDEXES = get_args().indexes 
+CUTOFF = get_args().cutoff 
 
 def reverse_complement(sequence: str, RNAflag: bool = False) -> str:
     '''Returns the reverse complement of a DNA or an RNA string (default DNA).
@@ -87,16 +87,16 @@ for i in indexsequencelist:
 
 filenames = [] # create a list of filenames
 for i in indexsequencelist: #for index-matched files, create filenames
-    filenames.append(f"./output/{filenamingdict[i]}_R1.fq")
-    filenames.append(f"./output/{filenamingdict[i]}_R2.fq")
+    filenames.append(f"./output/{filenamingdict[i]}_R1.fq.gz")
+    filenames.append(f"./output/{filenamingdict[i]}_R2.fq.gz")
 for i in ["unk", "hopped"]: #need to make files for unknown reads and for hopped reads
-    filenames.append(f"./output/{i}_R1.fq")
-    filenames.append(f"./output/{i}_R2.fq")
+    filenames.append(f"./output/{i}_R1.fq.gz")
+    filenames.append(f"./output/{i}_R2.fq.gz")
 
-filedata = {filename: open(filename, 'w') for filename in filenames} #open all the files to write to
+filedata = {filename: gzip.open(filename, 'wt') for filename in filenames} #open all the files to write to
 
-# THIS NEEDS TO BE GZIP NOT OPEN
-with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, open(READ4, 'r') as r4: #open to read all 4 files
+with gzip.open(READ1, 'rt') as r1, gzip.open(READ2, 'rt') as r2, gzip.open(READ3, 'rt') as r3, gzip.open(READ4, 'rt') as r4: #open to read all 4 files (.gz)
+#with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, open(READ4, 'r') as r4: #open to read all 4 files (unzipped)
     linenum: int = 0
 
     matchedcount: int = 0
@@ -122,10 +122,10 @@ with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, ope
         elif linenum % 4 == 3: #quality score line
             r1phred, r2phred, r3phred, r4phred = r1line, r2line, r3line, r4line
             
-            indextuple = (r2seq, reverse_complement(r3seq)) # this tuple will be compared to keys of allpairsdict first
+            indextuple = (r2seq, reverse_complement(r3seq)) # type: ignore # this tuple will be compared to keys of allpairsdict first
             seqpair = f"{indextuple[0]}_{indextuple[1]}"
 
-            if bioinfo.qual_score(r2phred) < CUTOFF or bioinfo.qual_score(r3phred) < CUTOFF or check_n(r2seq) or check_n(r3seq): # first, check for unknown
+            if bioinfo.qual_score(r2phred) < CUTOFF or bioinfo.qual_score(r3phred) < CUTOFF or check_n(r2seq) or check_n(r3seq):# type: ignore # first, check for unknown
                 unknown = True # bad quality indexes, these are unknowns
             else:
                 if indextuple in allpairsdict.keys():  #this is either hopped or matched
@@ -160,15 +160,15 @@ with open(READ1, 'r') as r1, open(READ2, 'r') as r2, open(READ3, 'r') as r3, ope
 
             # write to files ./output/<indexname>_R1.fq and ./output/<indexname>_R1.fq
             # here
-            filedata[f"{fname}_R1.fq"].write(f"{r1head} {seqpair}\n")
-            filedata[f"{fname}_R1.fq"].write(f"{r1seq}\n")
-            filedata[f"{fname}_R1.fq"].write(f"{r1plus}\n")
-            filedata[f"{fname}_R1.fq"].write(f"{r1phred}\n")
+            filedata[f"{fname}_R1.fq.gz"].write(f"{r1head} {seqpair}\n") # type: ignore
+            filedata[f"{fname}_R1.fq.gz"].write(f"{r1seq}\n") # type: ignore
+            filedata[f"{fname}_R1.fq.gz"].write(f"{r1plus}\n")# type: ignore
+            filedata[f"{fname}_R1.fq.gz"].write(f"{r1phred}\n")# type: ignore
 
-            filedata[f"{fname}_R2.fq"].write(f"{r4head} {seqpair}\n")
-            filedata[f"{fname}_R2.fq"].write(f"{r4seq}\n")
-            filedata[f"{fname}_R2.fq"].write(f"{r4plus}\n")
-            filedata[f"{fname}_R2.fq"].write(f"{r4phred}\n")
+            filedata[f"{fname}_R2.fq.gz"].write(f"{r4head} {seqpair}\n")# type: ignore
+            filedata[f"{fname}_R2.fq.gz"].write(f"{r4seq}\n")# type: ignore
+            filedata[f"{fname}_R2.fq.gz"].write(f"{r4plus}\n")# type: ignore
+            filedata[f"{fname}_R2.fq.gz"].write(f"{r4phred}\n")# type: ignore
 
         linenum += 1
 
@@ -178,4 +178,6 @@ for file in filedata.values(): # close all the writing files
     file.close()
 
 
-
+print(f"Count of hopped reads: {hoppedcount}")
+print(f"Count of matched-index reads: {matchedcount}")
+print(f"Count the number of unknown indexed reads: {unkcount}")
