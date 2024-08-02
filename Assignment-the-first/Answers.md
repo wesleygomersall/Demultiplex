@@ -75,4 +75,23 @@ The output for my program is going to be 4 + indexes * 2 separate files, each ty
     2. Function headers (name and parameters)
     3. Test examples for individual functions
     4. Return statement  
-(see pseudocode)  
+
+```
+def rev_complement(seq: str)-> revcomp: str:
+	"""Returns the reverse complement of a DNA sequence"""
+	input: "ACTGTGACA"
+        expected output: "TGTCACAGT"
+        return revcomp
+def check_n_bases(seq: str) -> nbases: bool:
+        """checks if there is an 'N' in a DNA sequence""""
+        input: "ACTGTGACA"
+        expected output: False
+        input 2: "ACTGTCANA"
+        expected output 2: True
+        return nbases
+def mean_qual(quals: str) -> meanq: float:
+        """calculates mean quality of a quality score string"""
+        input: "FFHH"
+        expected output: 38.0
+        return meanq
+```
