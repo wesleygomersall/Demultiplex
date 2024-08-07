@@ -8,7 +8,7 @@ Paste slurm output here and calculate the answers.
 
 # Answers
 
-From [slurm-7923319.out](./slurm-7923319.out)
+From [slurm-7923319.out](../slurm-7923319.out)
 
 ```
 Hopped read count: 662066
@@ -23,6 +23,6 @@ Total read count is `363246735`.
 - Unknown-index percentage: 9.0898%
 
 - [meanqual_Index1.png](../Assignment-the-first/meanqual_Index1.png)
-- [meanqual_Index2.png](../Assignment-the-first/meanqual_Index2png)
+- [meanqual_Index2.png](../Assignment-the-first/meanqual_Index2.png)
 - [meanqual_Read1.png](../Assignment-the-first/meanqual_Read1.png)
 - [meanqual_Read2.png](../Assignment-the-first/meanqual_Read2.png)
