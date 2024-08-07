@@ -159,6 +159,12 @@ Create [slurm script](./Assignment-the-third/demultiplex_slurm.sh) for running d
 
 First run of script, I use cutoff 35. I intend on reconsidering this value and re-running this later. See [slurm-7797951.out](./slurm-7797951.out). 
 
+```
+Hopped read count: 352378
+Matched-index read count: 239750646
+Unknown-indexed read count: 123143711
+```
+
 ## 2024-08-06
 
 Probility of an error in a given sequence is the sum of phred scores. So given average quality score, multiply by length to get an estimate of errors in the sequence.
@@ -166,3 +172,9 @@ Probility of an error in a given sequence is the sum of phred scores. So given a
 Divide 0.05 by 8, and the closest quality score associated with .00625 is 22.
 
 I am going to re-run the bash script to demultiplex with a more sensible cutoff of 22. See [slurm-7923319.out](./slurm-7923319.out).
+
+```
+Hopped read count: 662066
+Matched-index read count: 329566234
+Unknown-indexed read count: 33018435
+```
