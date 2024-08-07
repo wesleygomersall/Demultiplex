@@ -1,14 +1,6 @@
-final work will be submitted on [GitHub in the Assignment-the-Third folder](.). Make sure your folder is well organized and final output is clearly labeled/summarized (a markdown file would be much appreciated!!). Use your code to demultiplex the samples and report:
-
-- Percentage of reads from each sample
-- Overall amount of index swapping
-- Any figures/any other relevant data your code output
-
-Paste slurm output here and calculate the answers. 
-
 # Answers
 
-From [slurm-7923319.out](../slurm-7923319.out)
+From [slurm-7923319.out](../slurm-7923319.out). In this output you can see counts of all possible index read pairs. 
 
 ```
 Hopped read count: 662066
