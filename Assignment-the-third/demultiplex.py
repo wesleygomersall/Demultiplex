@@ -169,13 +169,17 @@ with gzip.open(READ1, 'rt') as r1, gzip.open(READ2, 'rt') as r2, gzip.open(READ3
 
 # filewritedict["./output/A5_R1.fq"].write("Hello World") #will write "hello world" to file "./output/A5_R1.fq"
 
+total = hoppedcount + matchedcount + unkcount
+hopperc = hoppedcount / total * 100  
+matchedperc = matchedcount / total * 100
+unkperc = unkcount / total * 100
+
 for file in filewritedict.values(): # close all the writing files
     file.close()
 
-
-print(f"Hopped read count: {hoppedcount}")
-print(f"Matched-index read count: {matchedcount}")
-print(f"Unknown-indexed read count: {unkcount}")
+print(f"Hopped read count: {hoppedcount} ({hopperc:.4f}%)")
+print(f"Matched-index read count: {matchedcount} ({matchedperc:.4f}%)")
+print(f"Unknown-indexed read count: {unkcount} ({unkperc:.4f}%)")
 
 for i in allpairsdict.keys():
     print(f"Index pair {i[0]}-{i[1]} count: {allpairsdict[i]}")

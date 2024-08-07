@@ -9,7 +9,7 @@
 
 # this script should be ran from the main git repo "Demultiplex"
 
-conda activate bgmp.py312
+conda activate bgmp_py312
 conda list
 
 # ./Assignment-the-third/demultiplex.py \ # for test run:
