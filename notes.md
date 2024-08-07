@@ -156,3 +156,13 @@ Also need to change to not writing to compressed files.
 Change the expected output file names to match the new file naming system. 
 
 Create [slurm script](./Assignment-the-third/demultiplex_slurm.sh) for running demultiplex.py
+
+First run of script, I use cutoff 35. I intend on reconsidering this value and re-running this later. See [slurm-7797951.out](./slurm-7797951.out). 
+
+## 2024-08-06
+
+Probility of an error in a given sequence is the sum of phred scores. So given average quality score, multiply by length to get an estimate of errors in the sequence.
+
+Divide 0.05 by 8, and the closest quality score associated with .00625 is 22.
+
+I am going to re-run the bash script to demultiplex with a more sensible cutoff of 22. See [slurm-7923319.out](./slurm-7923319.out).

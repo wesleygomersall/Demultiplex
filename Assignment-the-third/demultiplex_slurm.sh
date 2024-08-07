@@ -27,6 +27,6 @@ conda list
 	--read3 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R3_001.fastq.gz \
 	--read4 /projects/bgmp/shared/2017_sequencing/1294_S1_L008_R4_001.fastq.gz \
 	-i /projects/bgmp/shared/2017_sequencing/indexes.txt \
-	-c 35
+	-c 22 
 
 conda deactivate
