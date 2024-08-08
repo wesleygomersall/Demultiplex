@@ -178,3 +178,13 @@ Hopped read count: 662066
 Matched-index read count: 329566234
 Unknown-indexed read count: 33018435
 ```
+
+## 2024-08-07
+
+I realized that there was a small type in the script. I fixed it and also added calculations for the percentages of the three read categories into the script. See [slurm-8006625.out](./slurm-8006625.out)
+
+```
+Hopped read count: 662066 (0.1823%)
+Matched-index read count: 329566234 (90.7279%)
+Unknown-indexed read count: 33018435 (9.0898%)
+```
